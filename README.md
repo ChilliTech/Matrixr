@@ -7,6 +7,7 @@ Almost a year ago (on the 6th of April), I began a project - similar to this, ca
 I would be grateful if you were able to contribute in any way! Feel free to either find something to help with in the `TODO` section - or if you would prefer to do something else, just open a new issue, and assign yourself to it.
 
 # TODO: 
+- [ ] Make input fields autoupdate
 - [ ] Add a way to see the keyboard shortcuts when you launch the page - with a popup.
 - [ ] Add a popup with usage instructions when you first launch it.
 - [ ] Make this TODO list with github issues & project boards instead.
