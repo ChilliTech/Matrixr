@@ -1,0 +1,148 @@
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+#header{
+    background-color: #242424;
+    font-family: "Oswald", sans-serif;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 16px;
+    position: absolute;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+#header a{
+    color: #fff !important;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.aBtns{
+    color: #323232;
+    text-decoration: none;
+}
+
+#sceneTree, #propertyEditor{
+    background-color: #ffffff;
+    width: 20vw;
+    color: 323232;
+    position: absolute;
+    margin-top: 120px;
+    padding-left: 16px;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+#sceneTreeBtns{
+    background-color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 16px;
+    width: 20vw;
+    margin-top: 80px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+#sceneTree{
+    padding-bottom: 16px;
+    height: 40vh;
+    line-height: 8px;
+}
+
+#sceneTree p:hover{
+    cursor: pointer;
+}
+
+#propertyEditor{
+    margin-top: calc(40vh + 120px);
+    height: calc(60vh - 80px);
+    border-top: 6px solid #f8f8f8;
+    overflow-y: scroll;
+    white-space: normal;
+    padding-bottom: 32px;
+    padding-top: 16px;
+}
+
+#propertyEditor label{
+    display: inline-block;
+    margin-top: 8px;
+    width: 100%;
+}
+
+#propertyEditor input{
+    margin-left: 8px;
+}
+
+input{
+    border: none;
+    background-color: #f5f5f5;
+    padding-left: 8px;
+    padding: 6px;
+    border-radius: 6px;
+    color: #323232;
+}
+
+#objectPanel{
+    margin-top: calc(80px + 1vw);
+    margin-left: 1vw;
+    width: 18vw;
+    padding: 16px;
+    position: absolute;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    display: none; /* Hidden by default */
+}
+
+.objectPanelBtns{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.colorInputs{
+    padding: 0px;
+    border-radius: 0px;
+}
+
+hr{
+    border: 2px solid #f5f5f5 !important;
+    width: calc(100% - 16px - 16px);
+    margin-top: 16px;
+}
+
+#iconShortcuts{
+    position: absolute;
+    margin-top: 80px;
+    right: 0px;
+    padding-top: 16px;
+    padding-right: 16px;
+}
+
+#iconShortcuts img{
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.clickableIcons:hover{
+    cursor: pointer;
+
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Environment Composer</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="./images/translateIcon.svg" />
+    </head>
+    <body>
+        <header id="header">
+            <a class="aBtns" href="#" onclick="backup_project();">Backup</a>
+            <a class="aBtns" href="#" onclick="restore_from_backup();">Restore From Backup</a>
+            <a class="aBtns" href="#" onclick="reset_project();">RESET</a>
+        </header>
+
+        <div id="sceneTreeBtns">
+            <a class="aBtns" href="#" onclick="open_object_panel()">+</a>
+            <a class="aBtns" href="#" onclick="delete_object()">-</a>
+        </div>
+
+        <section id="sceneTree">
+            <!-- Everything below is added with code. -->
+        </section>
+
+        <section id="propertyEditor">
+            <!-- Everything below is added with code based on the selected object. -->
+        </section>
+
+        <div id="objectPanel">
+            <a style="width: 100%; font-size: 14px; font-weight: bold; color: #323232;" class="aBtns" href="#" onclick="close_object_panel()">🗙</a>
+            <br>
+            <br>
+            <a class="aBtns objectPanelBtns" href="#" onclick="add_object('cube')">Add Cube</a>
+            <a class="aBtns objectPanelBtns" href="#" onclick="add_object('cone')">Add Cone</a>
+            <a class="aBtns objectPanelBtns" href="#" onclick="add_object('cylinder')">Add Cylinder</a>
+            <a class="aBtns objectPanelBtns" href="#" onclick="add_object('plane')">Add Plane</a>
+            <a class="aBtns objectPanelBtns" href="#" onclick="add_object('sphere')">Add Sphere</a>
+            <a class="aBtns objectPanelBtns" href="#" onclick="add_object('torus')">Add Torus</a>
+        </div>
+        
+        <div id="iconShortcuts">
+            <img src="./images/scaleIcon.svg" class="clickableIcons" id="scaleIcon" onclick="set_transform_mode('scale')">
+            <img src="./images/rotateIcon.svg" class="clickableIcons" id="rotateIcon" onclick="set_transform_mode('rotate')">
+            <img src="./images/translateIconSelected.svg" class="clickableIcons" id="translateIcon" onclick="set_transform_mode('translate')"> <!-- This icon is selected by default -->
+        </div>
+
+        <canvas id="mainCanvas" onkeydown="keyboard_shortcut()"></canvas>
+
+        <script type="text/javascript" src="./lib/three.js"></script>
+        <script type="text/javascript" src="./lib/OrbitControls.js"></script>
+        <script type="text/javascript" src="./lib/OBJExporter.js"></script>
+
+        <script type="text/javascript" src="./js/setup.js"></script>
+        <script type="text/javascript" src="./js/backups.js"></script>
+        <script type="text/javascript" src="./js/propertyEditor.js"></script>
+        <script type="text/javascript" src="./js/sceneTree.js"></script>
+        <script type="text/javascript" src="./js/objects.js"></script>
+        <script type="text/javascript" src="./js/modes.js"></script>
+        <script type="text/javascript" src="./js/objectSelect.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+    </body>
+</html>
