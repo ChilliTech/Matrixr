@@ -7,7 +7,6 @@ Almost a year ago (on the 6th of April), I began a project - similar to this, ca
 I would be grateful if you were able to contribute in any way! Feel free to either find something to help with in the `TODO` section - or if you would prefer to do something else, just open a new issue, and assign yourself to it.
 
 # TODO: 
-- [ ] Make input fields autoupdate
 - [ ] Add a way to see the keyboard shortcuts when you launch the page - with a popup.
 - [ ] Add a popup with usage instructions when you first launch it.
 - [ ] Make this TODO list with github issues & project boards instead.
@@ -20,6 +19,7 @@ I would be grateful if you were able to contribute in any way! Feel free to eith
 - [ ] Add a popup for shortcuts for everything (like blender spacebar).
 - [ ] Add material.shading to the properties panel.
 - [ ] Add handles to move objects in the scene view.
+- [x] Make input fields autoupdate
 - [x] Add more stuff to the README.
 - [x] Allow objects to be selected by clicking them in the canvas.
 - [x] Add a function to update everything in the scene at once.
