@@ -5,6 +5,7 @@ Almost a year ago (on the 6th of April), I began a project - similar to this, ca
 
 # Contributing
 I would be grateful if you were able to contribute in any way! Feel free to either find something to help with in the `TODO` section - or if you would prefer to do something else, just open a new issue, and assign yourself to it.
+Please also feel free to post any questions or comments in the "discussions" section!
 
 # TODO:
 - [ ] Make it so that instead of individual btns to add an object, it's a search window - so you can add lights, etc.
