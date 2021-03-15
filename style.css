@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 body{
     margin: 0;
-    overflow: hidden;
+    height: 100vh;
 }
 
 #header{
-    background-color: #242424;
+    background-color: #323232;
     font-family: "Oswald", sans-serif;
+    position: absolute;
+    width: 100vw;
     height: 80px;
     line-height: 80px;
     padding-left: 16px;
-    position: absolute;
-    width: 100vw;
     box-sizing: border-box;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -19,130 +21,143 @@ body{
 
 #header a{
     color: #fff !important;
+    text-decoration: none;
     margin-left: 16px;
     margin-right: 16px;
 }
 
-.aBtns{
-    color: #323232;
-    text-decoration: none;
+#contextEditor{
+    width: 536px;
+    height: 536px;
+    background: #ffffff;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 24px;
+    position: absolute;
+
+    /*display: grid;*/
+    display: none; /* Hidden by default - enabled in the javascript with keyboard combinations */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr auto 130px;
+    grid-gap: 24px;
 }
 
 #sceneTree, #propertyEditor{
-    background-color: #ffffff;
-    width: 20vw;
-    color: 323232;
-    position: absolute;
-    margin-top: 120px;
-    padding-left: 16px;
-    box-sizing: border-box;
-    overflow-x: scroll;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 16px;
+    overflow-y: scroll;
     white-space: nowrap;
-}
-
-#sceneTreeBtns{
-    background-color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    height: 40px;
-    line-height: 40px;
-    padding-left: 16px;
-    width: 20vw;
-    margin-top: 80px;
-    position: absolute;
-    box-sizing: border-box;
-}
-
-#sceneTree{
-    padding-bottom: 16px;
-    height: 40vh;
     line-height: 8px;
 }
 
 #sceneTree p:hover{
-    cursor: pointer;
+    cursor:pointer;
+}
+
+#sceneTree{
+    grid-column: 1/3;
 }
 
 #propertyEditor{
-    margin-top: calc(40vh + 120px);
-    height: calc(60vh - 80px);
-    border-top: 6px solid #f8f8f8;
-    overflow-y: scroll;
-    white-space: normal;
-    padding-bottom: 32px;
-    padding-top: 16px;
+    grid-row: 1/3;
+    grid-column: 3/5;
 }
 
-#propertyEditor label{
-    display: inline-block;
-    margin-top: 8px;
-    width: 100%;
+#objectCreator{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    grid-column: 1/3;
+}
+
+/* STYLING FOR KEYBOARD SHORTCUTS */
+#keyboardShortcuts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 16px;
+    grid-column: 2/4;
 }
 
 #propertyEditor input{
-    margin-left: 8px;
-}
-
-input{
-    border: none;
-    background-color: #f5f5f5;
-    padding-left: 8px;
-    padding: 6px;
-    border-radius: 6px;
-    color: #323232;
-}
-
-#objectPanel{
-    margin-top: calc(80px + 1vw);
-    margin-left: 1vw;
-    width: 18vw;
-    padding: 16px;
-    position: absolute;
-    box-sizing: border-box;
+    border: 1px solid #e8e8e8;
     background-color: #ffffff;
-    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    padding: 8px;
     border-radius: 8px;
-
-    display: none; /* Hidden by default */
 }
 
-.objectPanelBtns{
+#propertyEditor button{
+    background-color: #323232;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+}
+
+#propertyEditor hr{
+    border: 4px solid #e8e8e8;
     width: 100%;
-    display: inline-block;
-    text-align: center;
 }
 
-.colorInputs{
-    padding: 0px;
-    border-radius: 0px;
+#transformMode{
+    grid-row: 3/4;
+    grid-column: 2/4;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    align-items: center;
+    justify-items: center;
+    grid-auto-flow: column;
 }
 
-hr{
-    border: 2px solid #f5f5f5 !important;
-    width: calc(100% - 16px - 16px);
-    margin-top: 16px;
-}
-
-#iconShortcuts{
-    position: absolute;
-    margin-top: 80px;
-    right: 0px;
-    padding-top: 16px;
-    padding-right: 16px;
-}
-
-#iconShortcuts img{
-    padding-left: 4px;
-    padding-right: 4px;
-}
-
-.clickableIcons:hover{
+#transformMode img:hover{
     cursor: pointer;
+}
 
-    user-drag: none; 
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+#transformMode img{
+    width: 18px;
+}
+
+#keyboardShortcuts p{
+    grid-row: 1/2;
+    text-align: center;
+    color: #1a91ff;
+    margin: 0px;
+}
+
+#transformShiftZ{
+    grid-row: 1/2;
+}
+
+#transformZ{
+    grid-row: 1/2;
+}
+
+#transformShiftX{
+    grid-row: 2/4;
+}
+
+#transformX{
+    grid-row: 2/4;
+}
+
+#transformShiftY{
+    grid-row: 2/3;
+}
+
+#transformY{
+    grid-row: 3/4;
+}
+
+/* NOT STYLING FOR KEYBOARD SHORTCUTS */
+.btns{
+    background-color: #323232;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.btns:hover{
+    cursor: pointer;
 }

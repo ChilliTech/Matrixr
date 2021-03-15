@@ -1,8 +1,5 @@
-// ----------
-// The main three.js sceneloop
-// ----------
-
 function animate() {
+    // Handle window resizing
     window.addEventListener("resize", () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();

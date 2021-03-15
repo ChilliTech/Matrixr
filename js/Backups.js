@@ -1,14 +1,20 @@
-// ----------
-// Setup backing up the scene, and restoring it from a backup
-// ----------
+// This procedure resets everything that the user had saved - in localStorage.
+function reset_project(){
+    if (confirm(resetProjectPrompt)){
+        localStorage.clear();
+        window.location.reload();
+    }
+}
 
-// Function to save the scene to localstorage
+// This procedure saves the scene to localstorage
 function save_project(){
     let sceneStr = JSON.stringify(scene);
     localStorage.setItem("scene", sceneStr);
+
+    display_message("Successfully saved the scene.");
 }
 
-// Function to restore the scene from a localStorage backup
+// This procedure restores the scene from a localStorage backup
 function restore_from_save(){
     let sceneStr = localStorage.getItem("scene");
     let sceneStrJSON = JSON.parse(sceneStr);
@@ -17,9 +23,15 @@ function restore_from_save(){
     selectedObject = scene;
 }
 
-// Function to save a downloaded backup file of the scene
+// This procedure creates a TXT backup file with a custom name of everything the user has in "scene".
 function backup_project(){
-    let filename = prompt("Please enter a name for your downloaded backup file:", "");
+    let filename = prompt(backupFileNamePrompt, "");
+    if (filename == null){
+        return;
+    } else if (filename == ""){
+        filename = scene.name;
+    }
+
     let data = JSON.stringify(scene);
     let type = "txt";
     let file = new Blob([data], {type: type});
@@ -41,17 +53,19 @@ function backup_project(){
 
         setTimeout(function() {
             document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);  
-        }, 0); 
+            window.URL.revokeObjectURL(url);
+        }, 0);
     }
+
+    display_message("Successfully backed up the scene.");
 }
 
-// Function to restore from a downloaded backup file.
+// This procedure restores the scene from a previously created TXT backup file
 function restore_from_backup(){
     let upload = document.createElement("INPUT");
     upload.setAttribute("type", "file");
     document.body.appendChild(upload);
-    
+
     upload.addEventListener('change', readURL, true);
     upload.click();
 
@@ -64,12 +78,10 @@ function restore_from_backup(){
             let sceneStrJSON = JSON.parse(sceneStr);
             scene = new THREE.ObjectLoader().parse(sceneStrJSON);
 
-            // Select the root object in the THREE.js scene
+            // Select the root object in the THREE.js scene.
             selectedObject = scene;
 
-            // Although in the html the file - which this function is in - hasn't loaded yet, 
-            // by the time the user runs this function it will have loaded (I think)
-            update_sceneTree();
+            display_message("Successfully restored from the backup.");
         }
 
         if (file){
@@ -78,12 +90,6 @@ function restore_from_backup(){
     }
 }
 
-function reset_project(){
-    if (confirm("Are you sure you want to reset the whole project (it will clear everything you have saved - unless you have downloaded a backup)?")){
-        localStorage.clear();
-        window.location.reload(); // Reload the page
-    }
-}
-
-// Restore from localstorage whenever the page is refreshed, and this code is run
+// When the file is refreshed or opened, this file (along with all the other source files) will be run.
+// So, when you refresh or open the page, it'll run this function.
 restore_from_save();

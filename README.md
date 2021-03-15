@@ -6,13 +6,13 @@ Almost a year ago (on the 6th of April), I began a project - similar to this, ca
 # Contributing
 I would be grateful if you were able to contribute in any way! Feel free to either find something to help with in the `TODO` section - or if you would prefer to do something else, just open a new issue, and assign yourself to it.
 
-# TODO: 
+# TODO:
+- [ ] Make it so that instead of individual btns to add an object, it's a search window - so you can add lights, etc.
+- [ ] Add the ability to move & resize the context editor.
+- [ ] Replace the save button with autosave.
 - [ ] Add a way to see the keyboard shortcuts when you launch the page - with a popup.
 - [ ] Add a popup with usage instructions when you first launch it.
 - [ ] Make this TODO list with github issues & project boards instead.
-- [ ] Improve Code:
-&nbsp;- [ ] Don't call functions from ONE file, if the functions are created in another file which is loaded after the "ONE" file in the html.
-&nbsp;- [ ] Add classes for everything.
 - [ ] Allow custom shapes to be added.
 - [ ] Add a better viewcontroller which can pan up & down, and ideally orbits around the mouse cursor.
 - [ ] Add icons for each of the shapes that can be added.
