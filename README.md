@@ -8,17 +8,15 @@ I would be grateful if you were able to contribute in any way! Feel free to eith
 Please also feel free to post any questions or comments in the "discussions" section!
 
 # TODO:
+- [ ] Add more things to the property editor - material.shading, visible, etc.
 - [ ] Make it so that instead of individual btns to add an object, it's a search window - so you can add lights, etc.
 - [ ] Add the ability to move & resize the context editor.
 - [ ] Replace the save button with autosave.
-- [ ] Add a way to see the keyboard shortcuts when you launch the page - with a popup.
-- [ ] Add a popup with usage instructions when you first launch it.
+- [ ] Add a way to see the keyboard shortcuts and usage instructions when you launch the page - with a popup - like blender's spacebar shortcut.
 - [ ] Make this TODO list with github issues & project boards instead.
 - [ ] Allow custom shapes to be added.
 - [ ] Add a better viewcontroller which can pan up & down, and ideally orbits around the mouse cursor.
 - [ ] Add icons for each of the shapes that can be added.
-- [ ] Add a popup for shortcuts for everything (like blender spacebar).
-- [ ] Add material.shading to the properties panel.
 - [ ] Add handles to move objects in the scene view.
 - [x] Make input fields autoupdate
 - [x] Add more stuff to the README.
@@ -29,3 +27,4 @@ Please also feel free to post any questions or comments in the "discussions" sec
 - [x] Allow shapes to be dynamically added.
 - [x] Add rotation inputs.
 - [x] Add scale inputs.
+
