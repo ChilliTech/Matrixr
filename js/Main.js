@@ -1,3 +1,5 @@
+display_message("Press 'a' to open the context editor.");
+
 function animate() {
     // Handle window resizing
     window.addEventListener("resize", () => {
