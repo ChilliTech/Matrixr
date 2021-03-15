@@ -9,7 +9,7 @@ Please also feel free to post any questions or comments in the "discussions" sec
 
 # TODO:
 - [ ] Add more things to the property editor - material.shading, visible, etc.
-- [ ] Make it so that instead of individual btns to add an object, it's a search window - so you can add lights, etc.
+- [ ] Make it so that instead of individual btns to add an object, it's a search window - so you can add lights, as well as change the objects resolution, etc.
 - [ ] Add the ability to move & resize the context editor.
 - [ ] Replace the save button with autosave.
 - [ ] Add a way to see the keyboard shortcuts and usage instructions when you launch the page - with a popup - like blender's spacebar shortcut.
