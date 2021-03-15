@@ -15,16 +15,15 @@ Please also feel free to post any questions or comments in the "discussions" sec
 - [ ] Add a way to see the keyboard shortcuts and usage instructions when you launch the page - with a popup - like blender's spacebar shortcut.
 - [ ] Make this TODO list with github issues & project boards instead.
 - [ ] Allow custom shapes to be added.
-- [ ] Add a better viewcontroller which can pan up & down, and ideally orbits around the mouse cursor.
+- [ ] Add a better view controller which can pan up & down, and ideally orbits around the mouse cursor.
 - [ ] Add icons for each of the shapes that can be added.
 - [ ] Add handles to move objects in the scene view.
 - [x] Make input fields autoupdate
 - [x] Add more stuff to the README.
-- [x] Allow objects to be selected by clicking them in the canvas.
+- [x] Allow objects to be selected by clicking them in   the canvas.
 - [x] Add a function to update everything in the scene at once.
 - [x] Allow keyboard shortcuts & a button to change the mode (translate, rotate, scale).
 - [x] Allow keyboard shortcuts to change those values (translation, rotation, scale), and display the keyboard shortcuts in the relevant labels.
 - [x] Allow shapes to be dynamically added.
 - [x] Add rotation inputs.
 - [x] Add scale inputs.
-

@@ -219,7 +219,7 @@ function update_properties_editor(){
                 scaleInputZ.addEventListener("change", function(){
                     selectedObject.scale.z = scaleInputZ.value;
                 });
-;            }
+            }
         }
     }
 }
