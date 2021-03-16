@@ -8,8 +8,10 @@ I would be grateful if you were able to contribute in any way! Feel free to eith
 Please also feel free to post any questions or comments in the "discussions" section!
 
 # TODO:
+- [ ] Make it so that you can see the transform mode & buttons without having to open the context menu.
 - [ ] Add more things to the property editor - material.shading, visible, etc.
 - [ ] Make it so that instead of individual btns to add an object, it's a search window - so you can add lights, as well as change the objects resolution, etc.
+- [ ] Add the ability to duplicate objects.
 - [ ] Add the ability to move & resize the context editor.
 - [ ] Replace the save button with autosave.
 - [ ] Add a way to see the keyboard shortcuts and usage instructions when you launch the page - with a popup - like blender's spacebar shortcut.
