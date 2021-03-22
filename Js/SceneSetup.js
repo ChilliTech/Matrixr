@@ -57,4 +57,6 @@ let resetProjectPrompt = "Are you sure you want to reset the whole project (it w
 let backupFileNamePrompt = "Please enter a name for your downloaded backup file:";
 
 let selectedObject = scene;
+let selectedObjectBBox = new THREE.BoxHelper(selectedObject, 0xffff00);
+scene.add(selectedObjectBBox);
 let transformMode = "position";

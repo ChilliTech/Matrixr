@@ -28,19 +28,27 @@ function update_scene_tree(){
     loop_through_scene(scene, 0);
 }
 
-// This function allows you to select an object,
+// These function(s) allows you to select an object,
 // before updating the scene tree to highlight the object,
 // and updating the properties viewer to display the properties of the object that's just been selected.
 sceneTree.addEventListener("click", function(e){
     let sceneObject = scene.getObjectByName(e.target.innerHTML);
+    select_object(sceneObject);
+});
 
-    if (sceneObject != undefined){
-        selectedObject = sceneObject;
-    }
+function select_object(object){
+    if (object == undefined) return; 
+    
+    selectedObject = object;
+
+    // Draw the bounding box around the selected object
+    scene.remove(selectedObjectBBox);
+    selectedObjectBBox = new THREE.BoxHelper(selectedObject, 0xffff00);
+    scene.add(selectedObjectBBox)
 
     update_scene_tree();
     update_properties_editor();
-});
+}
 
 // This function allows you to click on a button to add a new instance of it into the scene.
 objectCreator.addEventListener("click", function(e){
@@ -52,7 +60,7 @@ objectCreator.addEventListener("click", function(e){
     material.color.convertSRGBToLinear();
     material.flatShading = true;
 
-    var mesh = new THREE.Mesh(geometry, material);
+    let mesh = new THREE.Mesh(geometry, material);
     mesh.position.y += 0.5;
     mesh.name = "Object (" + sceneTree.children.length + ")";
     scene.add(mesh);
