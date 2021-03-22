@@ -8,8 +8,10 @@ function reset_project(){
 
 // This procedure saves the scene to localstorage
 function save_project(){
+    scene.remove(selectedObjectBBox);
     let sceneStr = JSON.stringify(scene);
     localStorage.setItem("scene", sceneStr);
+    scene.add(selectedObjectBBox)
 
     display_message("Successfully saved the scene.");
 }
@@ -25,6 +27,7 @@ function restore_from_save(){
 
 // This procedure creates a TXT backup file with a custom name of everything the user has in "scene".
 function backup_project(){
+    scene.remove(selectedObjectBBox);
     let filename = prompt(backupFileNamePrompt, "");
     if (filename == null){
         return;
@@ -57,6 +60,7 @@ function backup_project(){
         }, 0);
     }
 
+    scene.add(selectedObjectBBox);
     display_message("Successfully backed up the scene.");
 }
 
