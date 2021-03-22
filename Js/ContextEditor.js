@@ -36,15 +36,17 @@ sceneTree.addEventListener("click", function(e){
     select_object(sceneObject);
 });
 
+function draw_bbox(object){
+    scene.remove(selectedObjectBBox);
+    selectedObjectBBox = new THREE.BoxHelper(object, 0xffff00);
+    scene.add(selectedObjectBBox);
+}
+
 function select_object(object){
     if (object == undefined) return; 
     
     selectedObject = object;
-
-    // Draw the bounding box around the selected object
-    scene.remove(selectedObjectBBox);
-    selectedObjectBBox = new THREE.BoxHelper(selectedObject, 0xffff00);
-    scene.add(selectedObjectBBox)
+    draw_bbox(object);
 
     update_scene_tree();
     update_properties_editor();
@@ -77,8 +79,8 @@ function set_transform_mode(mode){
     let transformModeCapital = transformMode.charAt(0).toUpperCase() + transformMode.slice(1);
     let modeCapital = mode.charAt(0).toUpperCase() + mode.slice(1);
 
-    document.getElementById(transformModeCapital + "Icon").src = "./images/" + transformModeCapital + "Icon.svg";
-    document.getElementById(modeCapital + "Icon").src = "./images/" + modeCapital + "IconSelected.svg";
+    document.getElementById(transformModeCapital + "Icon").src = "./Images/" + transformModeCapital + "Icon.svg";
+    document.getElementById(modeCapital + "Icon").src = "./Images/" + modeCapital + "IconSelected.svg";
 
     transformMode = mode;
 }
@@ -100,6 +102,7 @@ function update_transforms(axis){
     }
 
     update_properties_editor();
+    draw_bbox(selectedObject);
 };
 keyboardShortcuts.addEventListener("click", function(e){ update_transforms(e.target.innerHTML) });
 
@@ -277,8 +280,3 @@ function context_editor_is_shown(){
 let dragged = false;
 document.getElementById("mainCanvas").addEventListener("mousedown", function () { dragged = false });
 document.getElementById("mainCanvas").addEventListener("mousemove", function (e) { dragged = true; mousePos = [e.pageX, e.pageY] });
-document.getElementById("mainCanvas").addEventListener("mouseup", function () {
-    if (dragged == false){
-        hide_context_editor();
-    }
-});
