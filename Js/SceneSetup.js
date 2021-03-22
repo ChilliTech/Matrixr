@@ -47,9 +47,9 @@ scene.add(gridFloor);
 axesHelper.name = "Axes Helper"
 scene.add(axesHelper);*/
 
-let contextEditor = document.getElementById("contextEditor");
 let sceneTree = document.getElementById("sceneTree");
 let objectCreator = document.getElementById("objectCreator");
+let propertyEditor = document.getElementById("propertyEditor");
 let keyboardShortcuts = document.getElementById("keyboardShortcuts");
 let transformModeHTML = document.getElementById("transformMode");
 

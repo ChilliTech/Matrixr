@@ -173,12 +173,15 @@ function update_properties_editor(){
                 positionInputZ.step = 0.25;
                 positionInputX.addEventListener("change", function(){
                     selectedObject.position.x = positionInputX.value;
+                    draw_bbox(selectedObject);
                 });
                 positionInputY.addEventListener("change", function(){
                     selectedObject.position.y = positionInputY.value;
+                    draw_bbox(selectedObject);
                 });
                 positionInputZ.addEventListener("change", function(){
                     selectedObject.position.z = positionInputZ.value;
+                    draw_bbox(selectedObject);
                 });
 
                 add_element(propertyEditor, "hr");
@@ -191,12 +194,15 @@ function update_properties_editor(){
                 rotationInputZ.step = 0.25;
                 rotationInputX.addEventListener("change", function(){
                     selectedObject.rotation.x = THREE.Math.degToRad(rotationInputX.value);
+                    draw_bbox(selectedObject);
                 });
                 rotationInputY.addEventListener("change", function(){
                     selectedObject.rotation.y = THREE.Math.degToRad(rotationInputY.value);
+                    draw_bbox(selectedObject);
                 });
                 rotationInputZ.addEventListener("change", function(){
                     selectedObject.rotation.z = THREE.Math.degToRad(rotationInputZ.value);
+                    draw_bbox(selectedObject);
                 });
 
                 add_element(propertyEditor, "hr");
@@ -209,12 +215,15 @@ function update_properties_editor(){
                 scaleInputZ.step = 0.25;
                 scaleInputX.addEventListener("change", function(){
                     selectedObject.scale.x = scaleInputX.value;
+                    draw_bbox(selectedObject);
                 });
                 scaleInputY.addEventListener("change", function(){
                     selectedObject.scale.y = scaleInputY.value;
+                    draw_bbox(selectedObject);
                 });
                 scaleInputZ.addEventListener("change", function(){
                     selectedObject.scale.z = scaleInputZ.value;
+                    draw_bbox(selectedObject);
                 });
             }
         }

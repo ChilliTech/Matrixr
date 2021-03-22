@@ -64,12 +64,26 @@ keyboardShortcuts.addEventListener("click", function(e){ update_transforms(e.tar
 
 // This procedure opens the context editor, and places it in the middle of the mouse.
 function show_context_editor(){
-    contextEditor.style.display = "grid";
-    contextEditor.style.marginLeft = mousePos[0] - (contextEditor.offsetWidth / 2) + "px";
-    contextEditor.style.marginTop = mousePos[1] - (contextEditor.offsetHeight / 2) + "px";
+    sceneTree.style.display = "block";
+    objectCreator.style.display = "grid";
+    propertyEditor.style.display = "block";
+    keyboardShortcuts.style.display = "grid";
+    
+    // Position all the elements
+    sceneTree.style.marginLeft = mousePos[0] - (sceneTree.offsetWidth / 2) + "px";
+    sceneTree.style.marginTop = mousePos[1] - (sceneTree.offsetHeight / 2) - 240 + "px";
+
+    objectCreator.style.marginLeft = mousePos[0] - (objectCreator.offsetWidth / 2) - 280 + "px";
+    objectCreator.style.marginTop = mousePos[1] - (objectCreator.offsetHeight / 2) + "px";
+
+    propertyEditor.style.marginLeft = mousePos[0] - (propertyEditor.offsetWidth / 2) + 280 + "px";
+    propertyEditor.style.marginTop = mousePos[1] - (propertyEditor.offsetHeight / 2) + "px";
+
+    keyboardShortcuts.style.marginLeft = mousePos[0] - (keyboardShortcuts.offsetWidth / 2) + "px";
+    keyboardShortcuts.style.marginTop = mousePos[1] - (keyboardShortcuts.offsetHeight / 2) + 200 + "px";
 
     // Make sure the element doesn't go off the screen
-    if (contextEditor.offsetLeft + contextEditor.offsetWidth > window.innerWidth){
+    /*if (contextEditor.offsetLeft + contextEditor.offsetWidth > window.innerWidth){
         contextEditor.style.marginLeft = window.innerWidth - contextEditor.offsetWidth + "px";
     }
 
@@ -83,7 +97,7 @@ function show_context_editor(){
 
     if (contextEditor.offsetTop < 0){
         contextEditor.style.marginTop = 0;
-    }
+    }*/
 
     update_scene_tree();
     update_properties_editor();
@@ -91,13 +105,17 @@ function show_context_editor(){
 
 // This procedure hides the context editor.
 function hide_context_editor(){
-    contextEditor.style.display = "none";
+    sceneTree.style.display = "none";
+    objectCreator.style.display = "none";
+    propertyEditor.style.display = "none";
+    keyboardShortcuts.style.display = "none";
 }
 
 // This procedure returns false if the context editor is hidden (style.display = "none"),
 // or true if the context editor is shown (style.display = grid).
 function context_editor_is_shown(){
-    if (contextEditor.style.display == "none"){
+    // It only checks if the sceneTree is visible - all the other context editor panels will be visible or hidden at the same time though
+    if (sceneTree.style.display == "none"){
         return false;
     } else {
         return true;
