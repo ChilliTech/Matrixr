@@ -71,16 +71,16 @@ function show_context_editor(){
     
     // Position all the elements
     sceneTree.style.marginLeft = mousePos[0] - (sceneTree.offsetWidth / 2) + "px";
-    sceneTree.style.marginTop = mousePos[1] - (sceneTree.offsetHeight / 2) - 240 + "px";
+    sceneTree.style.marginTop = mousePos[1] - (sceneTree.offsetHeight / 2) - (280 + 32) + "px";
 
-    objectCreator.style.marginLeft = mousePos[0] - (objectCreator.offsetWidth / 2) - 280 + "px";
+    objectCreator.style.marginLeft = mousePos[0] - (objectCreator.offsetWidth / 2) - (280 + 32) + "px";
     objectCreator.style.marginTop = mousePos[1] - (objectCreator.offsetHeight / 2) + "px";
 
-    propertyEditor.style.marginLeft = mousePos[0] - (propertyEditor.offsetWidth / 2) + 280 + "px";
+    propertyEditor.style.marginLeft = mousePos[0] - (propertyEditor.offsetWidth / 2) + (280 + 32) + "px";
     propertyEditor.style.marginTop = mousePos[1] - (propertyEditor.offsetHeight / 2) + "px";
 
     keyboardShortcuts.style.marginLeft = mousePos[0] - (keyboardShortcuts.offsetWidth / 2) + "px";
-    keyboardShortcuts.style.marginTop = mousePos[1] - (keyboardShortcuts.offsetHeight / 2) + 200 + "px";
+    keyboardShortcuts.style.marginTop = mousePos[1] - (keyboardShortcuts.offsetHeight / 2) + (280 + 32) + "px";
 
     // Make sure the element doesn't go off the screen
     /*if (contextEditor.offsetLeft + contextEditor.offsetWidth > window.innerWidth){
