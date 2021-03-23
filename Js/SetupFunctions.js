@@ -117,8 +117,9 @@ function update_properties_editor(){
     deleteObjectBtn.addEventListener("click", function(){
         if (confirm("Are you sure you want to delete '" + selectedObject.name + "'?")){
             scene.remove(selectedObject);
-            selectedObject = scene;
+            select_object(scene);
             update_scene_tree();
+            update_properties_editor();
         }
     });
 
