@@ -115,7 +115,7 @@ let availableObjects = {
             scene.add(light);
 
             let lightHelper = new THREE.DirectionalLightHelper(light, 2, 0x888888);
-            lightHelper.name = "Object (" + sceneTree.children.length - 1 + ") Helper";
+            lightHelper.name = "Object (" + sceneTree.children.length + ") Helper";
             light.add(lightHelper);
 
             select_object(light);
@@ -145,7 +145,7 @@ let availableObjects = {
             scene.add(light);
 
             let lightHelper = new THREE.HemisphereLightHelper(light, 2, 0x888888);
-            lightHelper.name = "Object (" + sceneTree.children.length - 1 + ") Helper";
+            lightHelper.name = "Object (" + sceneTree.children.length + ") Helper";
             light.add(lightHelper);
 
             select_object(light);
