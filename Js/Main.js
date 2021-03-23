@@ -1,5 +1,3 @@
-display_message("Press 'a' to open the context editor.");
-
 // Make it so when you click the canvas it hides the context editor & selects the object that's being clicked
 document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
     if (dragged == true) return;
