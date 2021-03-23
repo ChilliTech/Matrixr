@@ -155,12 +155,22 @@ function update_properties_editor(){
                 let colorR = selectedObject.material.color.r * 255;
                 let colorG = selectedObject.material.color.g * 255;
                 let colorB = selectedObject.material.color.b * 255;
+                let materialFlatShading = selectedObject.material.flatShading;
 
                 let materialColorInput = add_input_field(propertyEditor, "Material Color: ", "color", rgbToHex(colorR, colorG, colorB));
                 materialColorInput.addEventListener("change", function(){
                     selectedObject.material.color.r = hexToRgb(materialColorInput.value).r / 255;
                     selectedObject.material.color.g = hexToRgb(materialColorInput.value).g / 255;
                     selectedObject.material.color.b = hexToRgb(materialColorInput.value).b / 255;
+                });
+
+                let materialFlatShadingInput = add_input_field(propertyEditor, "Material Flat Shading:", "checkbox", false);
+                materialFlatShadingInput.checked = selectedObject.material.flatShading == true;
+                materialFlatShadingInput.addEventListener("change", function(){
+                    selectedObject.material.flatShading = materialFlatShadingInput.checked == true;
+                    selectedObject.material.needsUpdate = true;
+
+                    //selectedObject.material.flatShading = materialFlatShadingInput.value == "on";
                 });
 
                 add_element(propertyEditor, "hr");
