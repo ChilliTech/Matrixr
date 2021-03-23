@@ -36,26 +36,6 @@ objectSearchBar.addEventListener("change", function(){
     }
 });
 
-/*
-objectCreator.addEventListener("click", function(e){
-    let object = e.target.innerHTML;
-    object = object.split(" ")[1];
-
-    let geometry = new THREE[object + "Geometry"];
-    let material = new THREE.MeshPhysicalMaterial({color: 0xffffff, vertexColors: THREE.FaceColors});
-    material.color.convertSRGBToLinear();
-    material.flatShading = true;
-
-    let mesh = new THREE.Mesh(geometry, material);
-    mesh.position.y += 0.5;
-    mesh.name = "Object (" + sceneTree.children.length + ")";
-    scene.add(mesh);
-
-    select_object(mesh);
-    update_scene_tree();
-    update_properties_editor();
-});*/
-
 // This function allows you to click on the transform mode section to change the transform mode.
 // It is activated when the right button is pressed in the HTML file.
 function set_transform_mode(mode){
