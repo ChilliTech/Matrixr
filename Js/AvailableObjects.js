@@ -105,5 +105,35 @@ let availableObjects = {
             update_scene_tree();
             update_properties_editor();
         }
+    },
+
+    "Directional Light": {
+        "metadata": ["light", "directional", "lighting", "illumination", "lights"],
+        "add": function(){
+            let light = new THREE.DirectionalLight(0xcccccc);
+            light.name = "Object (" + sceneTree.children.length + ")";
+            scene.add(light);
+
+            let lightHelper = new THREE.DirectionalLightHelper(light, 2, 0x888888);
+            lightHelper.name = "Object (" + sceneTree.children.length - 1 + ") Helper";
+            light.add(lightHelper);
+
+            select_object(light);
+            update_scene_tree();
+            update_properties_editor();
+        }
+    },
+
+    "Ambient Light": {
+        "metadata": ["light", "ambient", "lighting", "illumination", "lights", "background"],
+        "add": function(){
+            let light = new THREE.AmbientLight(scene.background, 0.15);
+            light.name = "Object (" + sceneTree.children.length + ")";
+            scene.add(light);
+
+            select_object(light);
+            update_scene_tree();
+            update_properties_editor();
+        }
     }
 };
