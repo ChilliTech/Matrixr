@@ -135,5 +135,22 @@ let availableObjects = {
             update_scene_tree();
             update_properties_editor();
         }
+    },
+
+    "Hemisphere Light": {
+        "metadata": ["light", "hemisphere", "lighting", "illumination", "lights"],
+        "add": function(){
+            let light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+            light.name = "Object (" + sceneTree.children.length + ")";
+            scene.add(light);
+
+            let lightHelper = new THREE.HemisphereLightHelper(light, 2, 0x888888);
+            lightHelper.name = "Object (" + sceneTree.children.length - 1 + ") Helper";
+            light.add(lightHelper);
+
+            select_object(light);
+            update_scene_tree();
+            update_properties_editor();
+        }
     }
 };
