@@ -2,14 +2,6 @@
 document.body.addEventListener("keydown", function(e) {
     if (focusing == true) return;
 
-    else if (e.key == "a"){
-        if (context_editor_is_shown() == true){
-            hide_context_editor();
-        } else {
-            show_context_editor();
-        }
-    }
-
     // Saving - ctrl + s, or cmd + s
     else if ((e.ctrlKey == true) || (e.metaKey == true)){
         if (e.key == "s"){
