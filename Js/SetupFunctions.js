@@ -93,8 +93,6 @@ function select_object(object){
 }
 
 // Function(s) to add input fields to update attributes of the selected object.
-let focusing = false; // Keep track of whether the user is clicking on an input field
-
 // This function automates some stuff to do with the properties editor.
 // It adds a label & input field, handles some stuff to do with focusing, etc.
 function add_input_field(htmlElement, title, inputType, value){

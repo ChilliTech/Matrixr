@@ -8,7 +8,35 @@ sceneTree.addEventListener("click", function(e){
     select_object(sceneObject);
 });
 
-// This function allows you to click on a button to add a new instance of it into the scene.
+// This allows you to search through available objects to add a new instance of it into the scene.
+for (let key in availableObjects){
+    // Avoid looping through everything twice (because of __proto__ objects)
+    if (availableObjects.hasOwnProperty(key)){
+        let element = add_element(objectCreatorResults, "p");
+        element.innerHTML = key;
+        element.addEventListener("click", function(){ availableObjects[key].add() });
+    }
+}
+
+objectSearchBar.addEventListener("change", function(){
+    let searchTerm = objectSearchBar.value;
+
+    // Clear all the search terms:
+    objectCreatorResults.replaceChildren();
+    
+    for (let key in availableObjects){
+        // Avoid looping through everything twice (because of __proto__ objects)
+        if (availableObjects.hasOwnProperty(key)){
+            if (availableObjects[key].metadata.some(item => searchTerm.split(" ").includes(item))){
+                let element = add_element(objectCreatorResults, "p");
+                element.innerHTML = key;
+                element.addEventListener("click", function(){ availableObjects[key].add() });
+            }
+        }
+    }
+});
+
+/*
 objectCreator.addEventListener("click", function(e){
     let object = e.target.innerHTML;
     object = object.split(" ")[1];
@@ -23,10 +51,10 @@ objectCreator.addEventListener("click", function(e){
     mesh.name = "Object (" + sceneTree.children.length + ")";
     scene.add(mesh);
 
-    selectedObject = mesh;
+    select_object(mesh);
     update_scene_tree();
     update_properties_editor();
-});
+});*/
 
 // This function allows you to click on the transform mode section to change the transform mode.
 // It is activated when the right button is pressed in the HTML file.

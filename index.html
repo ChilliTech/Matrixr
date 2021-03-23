@@ -23,13 +23,11 @@
             </section>
     
             <section id="objectCreator">
-                <button id="addCube" class="btns">Add Cube</button>
-                <button id="addCone" class="btns">Add Cone</button>
-                <button id="addCylinder" class="btns">Add Cylinder</button>
-    
-                <button id="addPlane" class="btns">Add Plane</button>
-                <button id="addSphere" class="btns">Add Sphere</button>
-                <button id="addTorus" class="btns">Add Torus</button>
+                <p>Search for an object:</p>
+                <input id="objectSearchBar" placeholder="Search..." onfocus="focusing = true" onfocusout="focusing = false" type="text">
+                <div id="objectCreatorResults">
+                    <!-- Everything in here is added with code -->
+                </div>
             </section>
     
             <section id="keyboardShortcuts">
@@ -58,6 +56,7 @@
         <script type="text/javascript" src="./Js/SceneSetup.js"></script>
         <script type="text/javascript" src="./Js/SetupFunctions.js"></script>
         <script type="text/javascript" src="./Js/Backups.js"></script>
+        <script type="text/javascript" src="./Js/AvailableObjects.js"></script>
         <script type="text/javascript" src="./Js/ContextEditor.js"></script>
         <script type="text/javascript" src="./Js/KeyboardCombos.js"></script>
         <script type="text/javascript" src="./Js/Main.js"></script>

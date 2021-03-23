@@ -56,13 +56,12 @@ body{
     grid-row: 1/2;
 }
 
-#sceneTree p:hover{
+#sceneTree p:hover, #objectCreatorResults p:hover{
     cursor:pointer;
 }
 
 #objectCreator{
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 16px;
+    display: block;
     grid-column: 1/2;
     grid-row: 2/3;
 }
@@ -72,7 +71,7 @@ body{
     grid-row: 2/3;
 }
 
-#propertyEditor input{
+#propertyEditor input, #objectSearchBar{
     border: 1px solid #e8e8e8;
     background-color: #ffffff;
     padding: 8px;

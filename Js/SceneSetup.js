@@ -50,6 +50,8 @@ scene.add(axesHelper);*/
 let contextEditor = document.getElementById("contextEditor");
 let sceneTree = document.getElementById("sceneTree");
 let objectCreator = document.getElementById("objectCreator");
+let objectSearchBar = document.getElementById("objectSearchBar");
+let objectCreatorResults = document.getElementById("objectCreatorResults");
 let propertyEditor = document.getElementById("propertyEditor");
 let keyboardShortcuts = document.getElementById("keyboardShortcuts");
 let transformModeHTML = document.getElementById("transformMode");
@@ -64,3 +66,4 @@ selectedObjectBBox.name = "Selected Object Bounding Box";
 scene.add(selectedObjectBBox);
 
 let transformMode = "position";
+let focusing = false; // Keep track of whether the user is clicking on an input field
