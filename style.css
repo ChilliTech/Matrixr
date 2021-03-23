@@ -27,8 +27,8 @@ body{
 }
 
 #contextEditor{
-    width: 760px;
-    height: 760px;
+    width: 776px;
+    height: 776px;
     border-radius: 8px;
     position: absolute;
     display: grid;
