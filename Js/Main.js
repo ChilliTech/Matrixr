@@ -1,4 +1,10 @@
-// Make it so when you click the canvas it hides the context editor & selects the object that's being clicked
+// Prevent the regular context menu from being activated when right click is pressed
+document.body.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+    return;
+});
+
+// Make it so when you click the canvas it selects the object that's being clicked
 document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
     if (dragged == true) return;
 
@@ -17,15 +23,14 @@ document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
     
         select_object(intersects[0].object);
     }
+});
 
-    // Right click, open the context editor
-    else if (e.button == 2){
-        if (context_editor_is_shown() == true){
-            hide_context_editor();
-        } else {
-            show_context_editor();
-        }
-    }
+// Right click, open the context editor
+document.body.addEventListener("mouseup", function(e){
+    if (dragged == true) return;
+    if (e.button != 2) return;
+    
+    toggle_context_editor();
 });
 
 function animate() {

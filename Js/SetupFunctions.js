@@ -225,6 +225,8 @@ function update_properties_editor(){
                     selectedObject.scale.z = scaleInputZ.value;
                     draw_bbox(selectedObject);
                 });
+
+                add_element(propertyEditor, "hr");
             }
         }
     }

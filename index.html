@@ -13,40 +13,42 @@
             <a class="aBtns" href="#" onclick="restore_from_backup();">Restore</a>
         </header>
 
-        <section id="sceneTree">
-            <!-- Everything below is added with code -->
-        </section>
-
-        <section id="propertyEditor">
-            <!-- Everything in here is added with code -->
-        </section>
-
-        <section id="objectCreator">
-            <button id="addCube" class="btns">Add Cube</button>
-            <button id="addCone" class="btns">Add Cone</button>
-            <button id="addCylinder" class="btns">Add Cylinder</button>
-
-            <button id="addPlane" class="btns">Add Plane</button>
-            <button id="addSphere" class="btns">Add Sphere</button>
-            <button id="addTorus" class="btns">Add Torus</button>
-        </section>
-
-        <section id="keyboardShortcuts">
-            <section id="transformMode">
-                <img id="ScaleIcon" title="e" src="./Images/ScaleIcon.svg" onclick="set_transform_mode('scale')">
-                <img id="RotationIcon"title="r"  src="./Images/RotationIcon.svg" onclick="set_transform_mode('rotation')">
-                <img id="PositionIcon"title="t"  src="./Images/PositionIconSelected.svg" onclick="set_transform_mode('position')">
+        <section id="contextEditor">
+            <section id="sceneTree">
+                <!-- Everything below is added with code -->
             </section>
-
-            <button id="transformZ" class="btns">Z</button>
-            <p style="grid-column: 2/3; grid-row: 2/3; line-height: 24px;">Keyboard <br> Shortcuts</p>
-            <button id="transformShiftZ" class="btns">Shift + Z</button>
-            <button id="transformShiftX" class="btns">Shift + X</button>
-            <button id="transformShiftY" class="btns">Shift + Y</button>
-            <button id="transformY" class="btns">Y</button>
-            <button id="transformX" class="btns">X</button>
+    
+            <section id="propertyEditor">
+                <!-- Everything in here is added with code -->
+            </section>
+    
+            <section id="objectCreator">
+                <button id="addCube" class="btns">Add Cube</button>
+                <button id="addCone" class="btns">Add Cone</button>
+                <button id="addCylinder" class="btns">Add Cylinder</button>
+    
+                <button id="addPlane" class="btns">Add Plane</button>
+                <button id="addSphere" class="btns">Add Sphere</button>
+                <button id="addTorus" class="btns">Add Torus</button>
+            </section>
+    
+            <section id="keyboardShortcuts">
+                <section id="transformMode">
+                    <img id="ScaleIcon" title="e" src="./Images/ScaleIcon.svg" onclick="set_transform_mode('scale')">
+                    <img id="RotationIcon"title="r"  src="./Images/RotationIcon.svg" onclick="set_transform_mode('rotation')">
+                    <img id="PositionIcon"title="t"  src="./Images/PositionIconSelected.svg" onclick="set_transform_mode('position')">
+                </section>
+    
+                <button id="transformZ" class="btns">Z</button>
+                <p style="grid-column: 2/3; grid-row: 2/3; line-height: 24px;">Keyboard <br> Shortcuts</p>
+                <button id="transformShiftZ" class="btns">Shift + Z</button>
+                <button id="transformShiftX" class="btns">Shift + X</button>
+                <button id="transformShiftY" class="btns">Shift + Y</button>
+                <button id="transformY" class="btns">Y</button>
+                <button id="transformX" class="btns">X</button>
+            </section>
         </section>
-
+        
         <canvas id="mainCanvas">Sorry, your browser doesn't support the <code>canvas</code> element.</canvas>
 
         <script type="text/javascript" src="./Lib/three.js"></script>
