@@ -20,6 +20,7 @@ for (let key in availableObjects){
 
 objectSearchBar.addEventListener("change", function(){
     let searchTerm = objectSearchBar.value;
+    searchTerm = searchTerm.toLowerCase();
 
     // Clear all the search terms:
     objectCreatorResults.replaceChildren();
@@ -27,7 +28,7 @@ objectSearchBar.addEventListener("change", function(){
     for (let key in availableObjects){
         // Avoid looping through everything twice (because of __proto__ objects)
         if (availableObjects.hasOwnProperty(key)){
-            if (availableObjects[key].metadata.some(item => searchTerm.split(" ").includes(item))){
+            if ((availableObjects[key].metadata.some(item => searchTerm.split(" ").includes(item))) || (searchTerm == "")){
                 let element = add_element(objectCreatorResults, "p");
                 element.innerHTML = key;
                 element.addEventListener("click", function(){ availableObjects[key].add() });
