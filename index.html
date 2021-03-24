@@ -6,59 +6,8 @@
         <link rel="shortcut icon" href="./Images/Favicon.svg" />
     </head>
     <body>
-        <header id="header">
-            <a class="aBtns" href="#" onclick="save_project();">SAVE</a>
-            <a class="aBtns" href="#" onclick="reset_project();">Reset</a>
-            <a class="aBtns" href="#" onclick="backup_project();">Backup</a>
-            <a class="aBtns" href="#" onclick="restore_from_backup();">Restore</a>
-        </header>
-
-        <section id="contextEditor">
-            <section id="sceneTree">
-                <!-- Everything below is added with code -->
-            </section>
-    
-            <section id="propertyEditor">
-                <!-- Everything in here is added with code -->
-            </section>
-    
-            <section id="objectCreator">
-                <p>Search for an object:</p>
-                <input id="objectSearchBar" placeholder="Search..." onfocus="focusing = true" onfocusout="focusing = false" type="text">
-                <div id="objectCreatorResults">
-                    <!-- Everything in here is added with code -->
-                </div>
-            </section>
-    
-            <section id="keyboardShortcuts">
-                <section id="transformMode">
-                    <img id="ScaleIcon" title="e" src="./Images/ScaleIcon.svg" onclick="set_transform_mode('scale')">
-                    <img id="RotationIcon"title="r"  src="./Images/RotationIcon.svg" onclick="set_transform_mode('rotation')">
-                    <img id="PositionIcon"title="t"  src="./Images/PositionIconSelected.svg" onclick="set_transform_mode('position')">
-                </section>
-    
-                <button id="transformZ" class="btns">Z</button>
-                <p style="grid-column: 2/3; grid-row: 2/3; line-height: 24px;">Keyboard <br> Shortcuts</p>
-                <button id="transformShiftZ" class="btns">Shift + Z</button>
-                <button id="transformShiftX" class="btns">Shift + X</button>
-                <button id="transformShiftY" class="btns">Shift + Y</button>
-                <button id="transformY" class="btns">Y</button>
-                <button id="transformX" class="btns">X</button>
-            </section>
-        </section>
-        
-        <canvas id="mainCanvas">Sorry, your browser doesn't support the <code>canvas</code> element.</canvas>
-
         <script type="text/javascript" src="./Lib/three.js"></script>
         <script type="text/javascript" src="./Lib/OrbitControls.js"></script>
         <script type="text/javascript" src="./Lib/OBJExporter.js"></script>
-
-        <script type="text/javascript" src="./Js/SceneSetup.js"></script>
-        <script type="text/javascript" src="./Js/SetupFunctions.js"></script>
-        <script type="text/javascript" src="./Js/Backups.js"></script>
-        <script type="text/javascript" src="./Js/AvailableObjects.js"></script>
-        <script type="text/javascript" src="./Js/ContextEditor.js"></script>
-        <script type="text/javascript" src="./Js/KeyboardCombos.js"></script>
-        <script type="text/javascript" src="./Js/Main.js"></script>
     </body>
 </html>
