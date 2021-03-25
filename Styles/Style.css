@@ -8,3 +8,9 @@ input[type=text], input[type=number]{
     padding: 8px;
     border-radius: 8px;
 }
+
+input:focus{
+    outline: none;
+    border: 2px solid var(--selectionColor);
+    color: var(--selectionColor);
+}
