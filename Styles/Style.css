@@ -1,5 +1,7 @@
 #sceneTree, #propertyEditor, #objectCreator{
     padding: 16px;
+    border-top: 2px solid #f5f5f5;
+    border-bottom: 2px solid #f5f5f5;
 }
 
 input[type=text], input[type=number]{
@@ -12,5 +14,19 @@ input[type=text], input[type=number]{
 input:focus{
     outline: none;
     border: 2px solid var(--selectionColor);
-    color: var(--selectionColor);
+}
+
+canvas:focus{
+    outline: none;
+    border: none;
+}
+
+#objectSearchBar{
+    width: calc(100% - 16px);
+}
+
+#deleteObjectBtn{
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
 }
