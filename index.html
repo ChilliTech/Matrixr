@@ -2,7 +2,8 @@
 <html>
     <head>
         <title>Matrixr</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="./Styles/Layout.css" />
+        <link rel="stylesheet" href="./Styles/Style.css" />
         <link rel="shortcut icon" href="./Images/Favicon.svg" />
     </head>
     <body>
@@ -13,26 +14,25 @@
             <a class="aBtns" href="#" onclick="reset_project();">Reset</a>
         </header>
 
-        <div id="sceneTreeBtns">
-            <a class="aBtns" href="#" onclick="delete_object()">-</a>
-        </div>
-
         <section id="sceneTree">
-            <!-- Everything below is added with code. -->
+            <a class="aBtns" href="#" onclick="delete_object()">-</a>
+            <div id="sceneTreeItems">
+
+            </div>
         </section>
 
-        <section id="propertyEditor">
-            <!-- Everything below is added with code based on the selected object. -->
-        </section>
-
-        <div id="objectPanel">
+        <div id="objectCreator">
             <p>Search for an object:</p>
             <input id="objectSearchBar" placeholder="Search..." onfocus="focusing = true" onfocusout="focusing = false" type="text">
             <div id="objectCreatorResults">
-                <!-- Everything in here is added with code -->
+                
             </div>
         </div>
         
+        <section id="propertyEditor">
+            
+        </section>
+
         <canvas id="mainCanvas">Sorry, your browser doesn't support the <code>canvas</code> element.</canvas>
 
         <script type="text/javascript" src="./Lib/three.js"></script>

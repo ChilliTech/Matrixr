@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 40px 1fr 1fr 2fr;
+}
+
+#mainHeader{
+    background-color: #323232;
+    line-height: 40px;
+    font-family: "Oswald", sans-serif;
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+
+#mainHeader a{
+    color: white;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+#sceneTree{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#propertyEditor{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+#objectCreator{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+#mainCanvas{
+    grid-column: 2/3;
+    grid-row: 2/5;
+    width: 100%;
+    height: 100%;
+}
