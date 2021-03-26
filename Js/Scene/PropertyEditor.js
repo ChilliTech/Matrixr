@@ -3,5 +3,5 @@
 // ***************
 
 function update_property_editor(){
-    console.log("update_property_editor")
+    
 }

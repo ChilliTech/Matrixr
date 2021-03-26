@@ -35,11 +35,11 @@ function run_command(command, param=undefined){
             break;
 
         case "zoomIn":
-            camera.translateZ(-1);
+            camera.translateZ(-2);
             break;
         
         case "zoomOut":
-            camera.translateZ(1);
+            camera.translateZ(2);
             break;
                 
         default:

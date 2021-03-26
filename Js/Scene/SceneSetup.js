@@ -29,6 +29,9 @@ let dragged = false;
 document.body.addEventListener("mousedown", function () { dragged = false });
 document.body.addEventListener("mousemove", function (e) { dragged = true; mousePos = [e.pageX, e.pageY] });
 
+// ONLY FOR DEBBUGGING!
+//(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='https://mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})();
+
 // Setup the three.js scene
 let scene = new THREE.Scene();
 scene.background = new THREE.Color(0xf8f8f8);
@@ -78,7 +81,7 @@ ambientLight.name = "Ambient Light";
 scene.add(ambientLight);
 
 // The grid floor
-let gridFloor = new THREE.GridHelper(12, 12, 0x888888, 0x888888);
+let gridFloor = new THREE.GridHelper(2000, 2000, 0xcccccc, 0xcccccc);
 gridFloor.name = "Grid Floor";
 scene.add(gridFloor);
 
