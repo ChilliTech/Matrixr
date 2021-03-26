@@ -21,6 +21,7 @@ let resetProjectPrompt = "Are you sure you want to reset the whole project (it w
 let backupFileNamePrompt = "Please enter a name for your downloaded backup file:";
 let canvas = document.getElementById("mainCanvas");
 let header = document.getElementById("mainHeader");
+let sceneTree = document.getElementById("sceneTree");
 
 // Setup the three.js scene
 let scene = new THREE.Scene();
