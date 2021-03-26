@@ -17,7 +17,9 @@ document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
         raycaster.setFromCamera(mouse, camera);
         let intersects = raycaster.intersectObjects(scene.children);
         if (intersects[0] == undefined) return;
-        
+        if (intersects[0].object.name == "Selected Object Bounding Box") return;
+        if (intersects[0].object.name == "Grid Floor") return;
+
         run_command("selectObjectAndUpdate", intersects[0].object);
     }
 });
