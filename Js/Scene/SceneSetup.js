@@ -12,9 +12,11 @@ function is_focused(){
 
 is_focused();
 
-// Setup the three.js scene
+// Setup the html elements
 let canvas = document.getElementById("mainCanvas");
+let header = document.getElementById("mainHeader");
 
+// Setup the three.js scene
 let scene = new THREE.Scene();
 scene.background = new THREE.Color(0xf8f8f8);
 scene.name = "MyFirstProject";
@@ -66,3 +68,9 @@ scene.add(ambientLight);
 let gridFloor = new THREE.GridHelper(12, 12, 0x888888, 0x888888);
 gridFloor.name = "Grid Floor";
 scene.add(gridFloor);
+
+// Miscellaneous
+let selectedObject = scene;
+let selectedObjectBBox = new THREE.BoxHelper(selectedObject, 0xffff00);
+selectedObjectBBox.name = "Selected Object Bounding Box";
+scene.add(selectedObjectBBox);
