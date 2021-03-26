@@ -5,7 +5,7 @@
     line-height: 8px;
 }
 
-#sceneTree p:hover{
+#sceneTree p:hover, #objectCreator p:hover{
     cursor: pointer;
 }
 
@@ -18,7 +18,7 @@ input[type=text], input[type=number]{
 
 input:focus{
     outline: none;
-    border: 2px solid var(--selectionColor);
+    border: 2px solid var(--highlightColor);
 }
 
 canvas:focus{

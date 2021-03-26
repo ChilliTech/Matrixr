@@ -24,10 +24,6 @@ function run_command(command, param=undefined){
             update_scene_tree();
             break;
         
-        case "updateObjectCreator":
-            update_object_creator();
-            break;
-    
         case "updatePropertyEditor":
             update_property_editor();
             break;
@@ -44,5 +40,4 @@ function run_command(command, param=undefined){
 
 // When the page loads or is refreshed, update some stuff
 run_command("updateSceneTree");
-run_command("updateObjectCreator");
 run_command("updatePropertyEditor");

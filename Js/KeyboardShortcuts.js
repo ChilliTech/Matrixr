@@ -3,7 +3,6 @@
 // ***************
 
 document.body.addEventListener("keydown", function(e){
-    e.preventDefault();
     if (focusing == true) return;
 
     // Saving - ctrl + s, or cmd + s

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 :root{
-    --selectionColor: #4ba3f4;
+    --highlightColor: #4ba3f4;
 }
 
 body{
