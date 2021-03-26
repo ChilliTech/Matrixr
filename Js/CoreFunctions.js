@@ -1,3 +1,7 @@
+// ***************
+// This file contains some core functions.
+// ***************
+
 // This function adds an element inside another html element in javascript
 function add_element(htmlElement, nodeType){
     let node = document.createElement(nodeType);

@@ -1,3 +1,7 @@
+// ***************
+// This file allows the saving of the scene.
+// ***************
+
 // This procedure resets everything that the user had saved - in localStorage.
 function reset_project(){
     if (confirm(resetProjectPrompt)){
@@ -12,8 +16,6 @@ function save_project(){
     let sceneStr = JSON.stringify(scene);
     localStorage.setItem("scene", sceneStr);
     scene.add(selectedObjectBBox)
-
-    display_message("Successfully saved the scene.");
 }
 
 // This procedure restores the scene from a localStorage backup
@@ -61,12 +63,12 @@ function backup_project(){
     }
 
     scene.add(selectedObjectBBox);
-    display_message("Successfully backed up the scene.");
 }
 
 // This procedure restores the scene from a previously created TXT backup file
 function restore_from_backup(){
     let upload = document.createElement("INPUT");
+    upload.style.display = "none";
     upload.setAttribute("type", "file");
     document.body.appendChild(upload);
 
@@ -83,9 +85,8 @@ function restore_from_backup(){
             scene = new THREE.ObjectLoader().parse(sceneStrJSON);
 
             // Select the root object in the THREE.js scene.
-            selectedObject = scene;
-
-            display_message("Successfully restored from the backup.");
+            select_object(scene);
+            upload.parentElement.removeChild(upload);
         }
 
         if (file){

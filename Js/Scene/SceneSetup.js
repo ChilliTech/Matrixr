@@ -1,3 +1,7 @@
+// ***************
+// This file sets up the THREE.js scene
+// ***************
+
 // Keep track of whether an element with the id of "input" is being focused on
 let focusing = false;
 
@@ -12,7 +16,9 @@ function is_focused(){
 
 is_focused();
 
-// Setup the html elements
+// Setup the html elements & stuff
+let resetProjectPrompt = "Are you sure you want to reset the whole project (it will clear everything you have saved - unless you have downloaded a backup)?";
+let backupFileNamePrompt = "Please enter a name for your downloaded backup file:";
 let canvas = document.getElementById("mainCanvas");
 let header = document.getElementById("mainHeader");
 

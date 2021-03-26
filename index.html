@@ -8,10 +8,10 @@
     </head>
     <body>
         <header id="mainHeader">
-            <a class="aBtns" href="#" onclick="backup_project()">Backup</a>
-            <a class="aBtns" href="#" onclick="restore_from_backup()">Restore</a>
-            <a class="aBtns" href="#" onclick="save_project()">Save</a>
-            <a class="aBtns" href="#" onclick="reset_project()">Reset</a>
+            <a class="aBtns" href="#" onclick="run_command('backupProject')">Backup</a>
+            <a class="aBtns" href="#" onclick="run_command('restoreFromBackup')">Restore</a>
+            <a class="aBtns" href="#" onclick="run_command('saveProject')">Save</a>
+            <a class="aBtns" href="#" onclick="run_command('resetProject')">Reset</a>
         </header>
 
         <section id="sceneTree">
@@ -45,9 +45,9 @@
         <script type="text/javascript" src="./Js/Scene/PropertyEditor.js"></script>
         <script type="text/javascript" src="./Js/Scene/ObjectCreator.js"></script>
 
-        <script type="text/javascript" src="./Js/RunCommand.js"></script>
         <script type="text/javascript" src="./Js/CoreFunctions.js"></script>
         <script type="text/javascript" src="./Js/Backups.js"></script>
+        <script type="text/javascript" src="./Js/RunCommand.js"></script>
         <script type="text/javascript" src="./Js/KeyboardShortcuts.js"></script>
         <script type="text/javascript" src="./Js/Main.js"></script>
     </body>

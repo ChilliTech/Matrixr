@@ -1,3 +1,7 @@
+// ***************
+// This file contains the main animation loop
+// ***************
+
 // This function runs each frame and renders the scene
 function animate() {
     // Handle the window resizing

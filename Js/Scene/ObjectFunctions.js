@@ -1,3 +1,7 @@
+// ***************
+// This file contains some functions to do with objects.
+// ***************
+
 function delete_object(){
     console.log("DELETE OBJECT")
 }
