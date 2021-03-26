@@ -48,3 +48,13 @@ body{
     width: 100%;
     height: 100%;
 }
+
+#btns{
+    position: absolute;
+    top: calc(40px + 16px);
+    right: 16px;
+}
+
+#btns img:hover{
+    cursor: pointer;
+}

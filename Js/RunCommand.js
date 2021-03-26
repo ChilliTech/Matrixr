@@ -32,7 +32,16 @@ function run_command(command, param=undefined){
             select_object(param);
             run_command("updateSceneTree");
             run_command("updatePropertyEditor");
-            
+            break;
+
+        case "zoomIn":
+            camera.translateZ(-1);
+            break;
+        
+        case "zoomOut":
+            camera.translateZ(1);
+            break;
+                
         default:
             break;
     }

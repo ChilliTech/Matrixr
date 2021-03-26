@@ -12,4 +12,16 @@ document.body.addEventListener("keydown", function(e){
             run_command("saveProject");
         }
     }
+
+    else if (e.key == "e"){
+        
+    }
+
+    else if (e.key == "r"){
+        
+    }
+
+    else if (e.key == "t"){
+        
+    }
 });
