@@ -5,6 +5,10 @@
     line-height: 8px;
 }
 
+#sceneTree p:hover{
+    cursor: pointer;
+}
+
 input[type=text], input[type=number]{
     border: none;
     background-color: #f5f5f5;

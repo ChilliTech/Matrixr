@@ -2,7 +2,7 @@
 // This file allows any command to be performed.
 // ***************
 
-function run_command(command){
+function run_command(command, param=undefined){
     switch(command){
         case "saveProject":
             save_project();
@@ -31,6 +31,11 @@ function run_command(command){
         case "updatePropertyEditor":
             update_property_editor();
             break;
+
+        case "selectObjectAndUpdate":
+            select_object(param);
+            run_command("updateSceneTree");
+            run_command("updatePropertyEditor");
             
         default:
             break;
