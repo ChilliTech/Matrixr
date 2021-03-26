@@ -20,7 +20,7 @@ function update_scene_tree(){
                 htmlElement.style.marginLeft = indentLevel * 16 + "px";
 
                 if (scene[key] == selectedObject.name){
-                    htmlElement.style.color = "#00a1ff";
+                    htmlElement.style.color = "#4ba3f4";
                     htmlElement.style.fontWeight = "bold";
                 }
             }

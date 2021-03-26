@@ -11,6 +11,15 @@
     cursor: pointer;
 }
 
+#propertyEditor{
+    display: grid;
+}
+
+#propertyEditor label{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
 input[type=text], input[type=number]{
     border: none;
     background-color: #f5f5f5;
@@ -23,9 +32,27 @@ input:focus{
     border: 2px solid var(--highlightColor);
 }
 
+input[type=color]{
+    padding: 0px;
+    border: none;
+}
+
 canvas:focus{
     outline: none;
     border: none;
+}
+
+button{
+    background-color: #323232;
+    padding: 8px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+hr{
+    border: 2px solid #f5f5f5;
+    width: 100%;
 }
 
 #objectSearchBar{

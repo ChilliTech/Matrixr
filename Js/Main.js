@@ -15,7 +15,7 @@ document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
         mouse.y = - ((e.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
     
         raycaster.setFromCamera(mouse, camera);
-        let intersects = raycaster.intersectObjects(scene.children, true);
+        let intersects = raycaster.intersectObjects(scene.children);
         if (intersects[0] == undefined) return;
         
         run_command("selectObjectAndUpdate", intersects[0].object);
