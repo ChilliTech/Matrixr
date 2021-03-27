@@ -21,6 +21,9 @@ function save_project(){
 // This procedure restores the scene from a localStorage backup
 function restore_from_save(){
     let sceneStr = localStorage.getItem("scene");
+
+    if (sceneStr == null) return;
+    
     let sceneStrJSON = JSON.parse(sceneStr);
     scene = new THREE.ObjectLoader().parse(sceneStrJSON);
 
