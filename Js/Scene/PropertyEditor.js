@@ -63,26 +63,45 @@ function update_property_editor(){
 
                 add_element(propertyEditor, "hr");
             } else if (key == "material"){
-                let colorR = selectedObject.material.color.r * 255;
-                let colorG = selectedObject.material.color.g * 255;
-                let colorB = selectedObject.material.color.b * 255;
-                let materialFlatShading = selectedObject.material.flatShading;
+                if (selectedObject.material.color != undefined){
+                    let materialColorR = selectedObject.material.color.r * 255;
+                    let materialColorG = selectedObject.material.color.g * 255;
+                    let materialColorB = selectedObject.material.color.b * 255;
+    
+                    let materialColorInput = add_input_field(propertyEditor, "Material Color: ", "color", rgbToHex(materialColorR, materialColorG, materialColorB));
+                    materialColorInput.addEventListener("change", function(){
+                        selectedObject.material.color.r = hexToRgb(materialColorInput.value).r / 255;
+                        selectedObject.material.color.g = hexToRgb(materialColorInput.value).g / 255;
+                        selectedObject.material.color.b = hexToRgb(materialColorInput.value).b / 255;
+                    });
+    
+                }
+                
+                if (selectedObject.material.emissive != undefined){
+                    let materialEmissiveR = selectedObject.material.emissive.r * 255;
+                    let materialEmissiveG = selectedObject.material.emissive.g * 255;
+                    let materialEmissiveB = selectedObject.material.emissive.b * 255;
+    
+                    let materialEmissiveInput = add_input_field(propertyEditor, "Material Emissive: ", "color", rgbToHex(materialEmissiveR, materialEmissiveG, materialEmissiveB));
+                    materialEmissiveInput.addEventListener("change", function(){
+                        selectedObject.material.emissive.r = hexToRgb(materialEmissiveInput.value).r / 255;
+                        selectedObject.material.emissive.g = hexToRgb(materialEmissiveInput.value).g / 255;
+                        selectedObject.material.emissive.b = hexToRgb(materialEmissiveInput.value).b / 255;
+                        save_project();
+                    });
+                }
 
-                let materialColorInput = add_input_field(propertyEditor, "Material Color: ", "color", rgbToHex(colorR, colorG, colorB));
-                materialColorInput.addEventListener("change", function(){
-                    selectedObject.material.color.r = hexToRgb(materialColorInput.value).r / 255;
-                    selectedObject.material.color.g = hexToRgb(materialColorInput.value).g / 255;
-                    selectedObject.material.color.b = hexToRgb(materialColorInput.value).b / 255;
-                });
-
-                let materialFlatShadingInput = add_input_field(propertyEditor, "Material Flat Shading:", "checkbox", false);
-                materialFlatShadingInput.checked = selectedObject.material.flatShading == true;
-                materialFlatShadingInput.addEventListener("change", function(){
-                    selectedObject.material.flatShading = materialFlatShadingInput.checked == true;
-                    selectedObject.material.needsUpdate = true;
-
-                    //selectedObject.material.flatShading = materialFlatShadingInput.value == "on";
-                });
+                if (selectedObject.material.flatShading != undefined){
+                    let materialFlatShading = selectedObject.material.flatShading;
+    
+                    let materialFlatShadingInput = add_input_field(propertyEditor, "Material Flat Shading:", "checkbox", false);
+                    materialFlatShadingInput.checked = selectedObject.material.flatShading == true;
+                    materialFlatShadingInput.addEventListener("change", function(){
+                        selectedObject.material.flatShading = materialFlatShadingInput.checked == true;
+                        selectedObject.material.needsUpdate = true;
+                        save_project();
+                    });
+                }
 
                 add_element(propertyEditor, "hr");
             } else if (key == "position"){

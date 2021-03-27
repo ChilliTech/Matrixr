@@ -21,7 +21,7 @@ document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
         if (intersects[0] == undefined) return;
 
         // Don't let linesegments be selected for bug reasons
-        if (intersects[0].object.name == "LineSegments") return;
+        if (intersects[0].object.type == "LineSegments") return;
 
         select_object(intersects[0].object);
         update_scene_tree();
