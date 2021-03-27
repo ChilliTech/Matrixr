@@ -161,6 +161,20 @@ function update_property_editor(){
                     });
                 }
 
+                // The clearcoat roughness property of the material
+                if (selectedObject.material.clearcoatRoughness != undefined){
+                    let materialClearcoatRoughness = selectedObject.material.clearcoatRoughness;
+
+                    let materialClearcoatRoughnessInput = add_input_field(propertyEditor, "Material Clearcoat Roughness: ", "range", materialClearcoatRoughness);
+                    materialClearcoatRoughnessInput.min = 0;
+                    materialClearcoatRoughnessInput.max = 100;
+                    materialClearcoatRoughnessInput.addEventListener("change", function(){
+                        selectedObject.material.clearcoatRoughness = materialClearcoatRoughnessInput.value / 100;
+                        selectedObject.material.needsUpdate = true;
+                        save_project();
+                    });
+                }
+
                 add_element(propertyEditor, "hr");
             } else if (key == "background"){
                 let colorR = selectedObject.background.r * 255;
