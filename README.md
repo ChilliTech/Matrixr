@@ -4,6 +4,7 @@
 Almost a year ago (on the 6th of April), I began a project - similar to this, called "Mesh Composer". I have since come to terms with the fact that... well... the code isn't that good. Anyway, I decided to redo Mesh Composer - which is this project - which was started somewhere around the 4th of March (I think).
 
 This branch was created to re-do the project to implement some core features such as the following:
+* A separate camera to move and reposition - which is the point of view of the final render.
 * A dark & light theme with a way to switch between them.
 * The ability to add & customise windows, their sizes, what type of window they are, etc.
 * A way to add a shortcut to everything in Matrixr, which can be accessed by right-clicking.
