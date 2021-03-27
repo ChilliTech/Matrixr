@@ -109,11 +109,25 @@ function update_property_editor(){
                 if (selectedObject.material.roughness != undefined){
                     let materialRoughness = selectedObject.material.roughness;
 
-                    let materialRoughnessInput = add_input_field(propertyEditor, "Material Roughness: ", "range", selectedObject.material.roughness);
+                    let materialRoughnessInput = add_input_field(propertyEditor, "Material Roughness: ", "range", materialRoughness);
                     materialRoughnessInput.min = 0;
                     materialRoughnessInput.max = 100;
                     materialRoughnessInput.addEventListener("change", function(){
                         selectedObject.material.roughness = materialRoughnessInput.value / 100;
+                        selectedObject.material.needsUpdate = true;
+                        save_project();
+                    });
+                }
+
+                // The metalness property of the material
+                if (selectedObject.material.metalness != undefined){
+                    let materialMetalness = selectedObject.material.metalness;
+
+                    let materialMetalnessInput = add_input_field(propertyEditor, "Material Metalness: ", "range", materialMetalness);
+                    materialMetalnessInput.min = 0;
+                    materialMetalnessInput.max = 100;
+                    materialMetalnessInput.addEventListener("change", function(){
+                        selectedObject.material.metalness = materialMetalnessInput.value / 100;
                         selectedObject.material.needsUpdate = true;
                         save_project();
                     });
