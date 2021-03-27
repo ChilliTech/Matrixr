@@ -3,7 +3,7 @@
 // ***************
 
 // This procedure resets everything that the user had saved - in localStorage.
-function reset_project(){
+function new_project(){
     if (!confirm(resetProjectPrompt)) return;
 
     localStorage.clear();
@@ -23,7 +23,7 @@ function restore_from_save(){
     let sceneStr = localStorage.getItem("scene");
 
     if (sceneStr == null) return;
-    
+
     let sceneStrJSON = JSON.parse(sceneStr);
     scene = new THREE.ObjectLoader().parse(sceneStrJSON);
 

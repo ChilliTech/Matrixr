@@ -1,0 +1,42 @@
+/* 
+This stuff is mostly taken from:
+https://www.w3schools.com/howto/howto_css_subnav.asp
+*/
+.subNav{
+    float: left;
+    overflow: hidden;
+}
+
+.subNavBtn{
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.subNav:hover .subNavBtn{
+    background-color: var(--highlightColor);
+}
+
+.subNavContent{
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: var(--highlightColor);
+    width: 100%;
+    z-index: 1;
+}
+
+.subNavContent a{
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+
+.subNav:hover .subNavContent{
+    display: block;
+}

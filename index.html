@@ -4,13 +4,19 @@
         <title>Matrixr</title>
         <link rel="stylesheet" href="./Styles/Layout.css" />
         <link rel="stylesheet" href="./Styles/Style.css" />
+        <link rel="stylesheet" href="./Styles/MainHeaderDropdown.css" />
         <link rel="shortcut icon" href="./Images/Favicon.svg" />
     </head>
     <body>
         <header id="mainHeader">
-            <a class="aBtns" href="#" onclick="backup_project()">Backup</a>
-            <a class="aBtns" href="#" onclick="restore_from_backup()">Restore</a>
-            <a class="aBtns" href="#" onclick="reset_project()">Reset</a>
+            <div class="subNav">
+                <a href="#" class="subNavBtn">File <i class="fa faCaretDown"></i></a>
+                <div class="subNavContent">
+                    <a href="#" onclick="backup_project()">Backup</a>
+                    <a href="#" onclick="restore_from_backup()">Restore</a>
+                </div>
+            </div>
+            <a href="#" onclick="new_project()">New Project</a>
         </header>
 
         <section id="sceneTree">
