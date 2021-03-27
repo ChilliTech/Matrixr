@@ -2,6 +2,7 @@
 // This file allows any command to be performed.
 // ***************
 
+/*
 function run_command(command, param=undefined){
     switch(command){
         case "saveProject":
@@ -47,6 +48,8 @@ function run_command(command, param=undefined){
     }
 }
 
+
 // When the page loads or is refreshed, update some stuff
 run_command("updateSceneTree");
 run_command("updatePropertyEditor");
+*/

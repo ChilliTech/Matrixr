@@ -17,10 +17,13 @@ document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
         raycaster.setFromCamera(mouse, camera);
         let intersects = raycaster.intersectObjects(scene.children);
         if (intersects[0] == undefined) return;
-        if (intersects[0].object.name == "Selected Object Bounding Box") return;
-        if (intersects[0].object.name == "Grid Floor") return;
+        if (intersects[0].object.type == "LineSegments") return; // Don't let linesegments be selected for bug reasons
 
-        run_command("selectObjectAndUpdate", intersects[0].object);
+        console.log(intersects[0].object)
+
+        select_object(intersects[0].object);
+        update_scene_tree();
+        update_property_editor();
     }
 });
 

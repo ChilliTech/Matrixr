@@ -150,3 +150,5 @@ function update_property_editor(){
         }
     }
 }
+
+update_property_editor();

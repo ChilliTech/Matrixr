@@ -15,9 +15,9 @@ let availableObjects = {
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     },
 
@@ -33,9 +33,9 @@ let availableObjects = {
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     },
 
@@ -51,9 +51,9 @@ let availableObjects = {
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     },
 
@@ -69,9 +69,9 @@ let availableObjects = {
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     },
 
@@ -87,9 +87,9 @@ let availableObjects = {
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     },
 
@@ -105,9 +105,9 @@ let availableObjects = {
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     },
 
@@ -122,9 +122,9 @@ let availableObjects = {
             lightHelper.name = "Object (" + sceneTree.children.length + ") Helper";
             light.add(lightHelper);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     },
 
@@ -135,9 +135,9 @@ let availableObjects = {
             light.name = "Object (" + sceneTree.children.length + ")";
             scene.add(light);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     },
 
@@ -152,9 +152,9 @@ let availableObjects = {
             lightHelper.name = "Object (" + sceneTree.children.length + ") Helper";
             light.add(lightHelper);
 
-            run_command("selectObjectAndUpdate", mesh);
-            run_command("updateSceneTree");
-            run_command("updatePropertyEditor");
+            select_object(mesh);
+            update_scene_tree();
+            update_property_editor();
         }
     }
 };

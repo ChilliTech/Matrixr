@@ -8,10 +8,10 @@
     </head>
     <body>
         <header id="mainHeader">
-            <a class="aBtns" href="#" onclick="run_command('backupProject')">Backup</a>
-            <a class="aBtns" href="#" onclick="run_command('restoreFromBackup')">Restore</a>
-            <a class="aBtns" href="#" onclick="run_command('saveProject')">Save</a>
-            <a class="aBtns" href="#" onclick="run_command('resetProject')">Reset</a>
+            <a class="aBtns" href="#" onclick="backup_project()">Backup</a>
+            <a class="aBtns" href="#" onclick="restore_from_backup()">Restore</a>
+            <a class="aBtns" href="#" onclick="save_project()">Save</a>
+            <a class="aBtns" href="#" onclick="reset_project()">Reset</a>
         </header>
 
         <section id="sceneTree">
@@ -36,8 +36,8 @@
         <canvas id="mainCanvas">Sorry, your browser doesn't support the <code>canvas</code> element.</canvas>
 
         <div id="btns">
-            <img src="Images/ZoomIn.svg" onclick="run_command('zoomIn')"/>
-            <img src="Images/ZoomOut.svg" onclick="run_command('zoomOut')" />
+            <img src="Images/ZoomIn.svg" onclick="camera.translateZ(-2)"/>
+            <img src="Images/ZoomOut.svg" onclick="camera.translateZ(2)" />
         </div>
 
 

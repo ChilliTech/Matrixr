@@ -30,7 +30,13 @@ function update_scene_tree(){
     loop_through_scene(scene, 0);
 }
 
+update_scene_tree();
+
 sceneTree.addEventListener("click", function(e){
     let sceneObject = scene.getObjectByName(e.target.innerHTML);
-    if (sceneObject != undefined){ run_command("selectObjectAndUpdate", sceneObject) }
+    if (sceneObject != undefined){ 
+        select_object(sceneObject);
+        update_scene_tree();
+        update_property_editor();
+    }
 });

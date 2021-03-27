@@ -9,7 +9,7 @@ document.body.addEventListener("keydown", function(e){
     else if ((e.ctrlKey == true) || (e.metaKey == true)){
         if (e.key == "s"){
             e.preventDefault();
-            run_command("saveProject");
+            save_project();
         }
     }
 
