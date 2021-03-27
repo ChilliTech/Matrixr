@@ -104,7 +104,21 @@ function update_property_editor(){
                         save_project();
                     });
                 }
-                
+
+                // The roughness property of the material
+                if (selectedObject.material.roughness != undefined){
+                    let materialRoughness = selectedObject.material.roughness;
+
+                    let materialRoughnessInput = add_input_field(propertyEditor, "Material Roughness: ", "range", selectedObject.material.roughness);
+                    materialRoughnessInput.min = 0;
+                    materialRoughnessInput.max = 100;
+                    materialRoughnessInput.addEventListener("change", function(){
+                        selectedObject.material.roughness = materialRoughnessInput.value / 100;
+                        selectedObject.material.needsUpdate = true;
+                        save_project();
+                    });
+                }
+
                 add_element(propertyEditor, "hr");
             } else if (key == "background"){
                 let colorR = selectedObject.background.r * 255;
