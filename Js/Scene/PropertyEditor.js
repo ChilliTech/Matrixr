@@ -134,7 +134,7 @@ function update_property_editor(){
                 }
 
                 // The reflectivity property of the material
-                if (selectedObject.material.metalness != undefined){
+                if (selectedObject.material.reflectivity != undefined){
                     let materialReflectivity = selectedObject.material.reflectivity;
 
                     let materialReflectivityInput = add_input_field(propertyEditor, "Material Reflectivity: ", "range", materialReflectivity);
@@ -142,6 +142,20 @@ function update_property_editor(){
                     materialReflectivityInput.max = 100;
                     materialReflectivityInput.addEventListener("change", function(){
                         selectedObject.material.reflectivity = materialReflectivityInput.value / 100;
+                        selectedObject.material.needsUpdate = true;
+                        save_project();
+                    });
+                }
+
+                // The clearcoat property of the material
+                if (selectedObject.material.clearcoat != undefined){
+                    let materialClearcoat = selectedObject.material.clearcoat;
+
+                    let materialClearcoatInput = add_input_field(propertyEditor, "Material Clearcoat: ", "range", materialClearcoat);
+                    materialClearcoatInput.min = 0;
+                    materialClearcoatInput.max = 100;
+                    materialClearcoatInput.addEventListener("change", function(){
+                        selectedObject.material.clearcoat = materialClearcoatInput.value / 100;
                         selectedObject.material.needsUpdate = true;
                         save_project();
                     });
