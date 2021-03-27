@@ -30,6 +30,7 @@ objectSearchBar.addEventListener("change", function(){
                 element.style.textDecoration = "underline";
                 element.innerHTML = key;
                 element.addEventListener("click", function(){ availableObjects[key].add() });
+                save_project();
             }
         }
     }

@@ -13,6 +13,7 @@ function add_input_field(htmlElement, title, inputType, value){
     inputField.value = value;
     inputField.addEventListener("focus", function(){ focusing = true });
     inputField.addEventListener("focusout", function(){ focusing = false });
+    inputField.addEventListener("change", function(){ save_project() });
 
     return inputField;
 }
@@ -30,6 +31,7 @@ function update_property_editor(){
             select_object(scene);
             update_scene_tree();
             update_properties_editor();
+            save_project();
         }
     });
 

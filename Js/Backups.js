@@ -15,7 +15,7 @@ function save_project(){
     scene.remove(selectedObjectBBox);
     let sceneStr = JSON.stringify(scene);
     localStorage.setItem("scene", sceneStr);
-    scene.add(selectedObjectBBox)
+    scene.add(selectedObjectBBox);
 }
 
 // This procedure restores the scene from a localStorage backup
@@ -24,7 +24,7 @@ function restore_from_save(){
     let sceneStrJSON = JSON.parse(sceneStr);
     scene = new THREE.ObjectLoader().parse(sceneStrJSON);
 
-    selectedObject = scene;
+    select_object(scene);
 }
 
 // This procedure creates a TXT backup file with a custom name of everything the user has in "scene".
@@ -85,6 +85,7 @@ function restore_from_backup(){
             scene = new THREE.ObjectLoader().parse(sceneStrJSON);
 
             // Select the root object in the THREE.js scene.
+            save_project();
             select_object(scene);
             upload.parentElement.removeChild(upload);
         }
@@ -100,5 +101,5 @@ function restore_from_backup(){
 restore_from_save();
 
 window.onbeforeunload = function(e){
-    e.returnValue = "Reload site? Changes you made may not be saved.";
+    save_project();
 }
