@@ -4,10 +4,10 @@
 
 // This procedure resets everything that the user had saved - in localStorage.
 function reset_project(){
-    if (confirm(resetProjectPrompt)){
-        localStorage.clear();
-        window.location.reload();
-    }
+    if (!confirm(resetProjectPrompt)) return;
+
+    localStorage.clear();
+    window.location.reload();
 }
 
 // This procedure saves the scene to localstorage
@@ -99,7 +99,3 @@ function restore_from_backup(){
 // When the file is refreshed or opened, this file (along with all the other source files) will be run.
 // So, when you refresh or open the page, it'll run this function.
 restore_from_save();
-
-window.onbeforeunload = function(e){
-    save_project();
-}
