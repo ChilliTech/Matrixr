@@ -97,9 +97,22 @@ function update_property_editor(){
                     let materialFlatShading = selectedObject.material.flatShading;
     
                     let materialFlatShadingInput = add_input_field(propertyEditor, "Material Flat Shading:", "checkbox", false);
-                    materialFlatShadingInput.checked = selectedObject.material.flatShading == true;
+                    materialFlatShadingInput.checked = materialFlatShading == true;
                     materialFlatShadingInput.addEventListener("change", function(){
                         selectedObject.material.flatShading = materialFlatShadingInput.checked == true;
+                        selectedObject.material.needsUpdate = true;
+                        save_project();
+                    });
+                }
+
+                // The wireframe property of the material
+                if (selectedObject.material.wireframe != undefined){
+                    let materialWireframe = selectedObject.material.wireframe;
+    
+                    let materialWireframeInput = add_input_field(propertyEditor, "Material Wireframe:", "checkbox", false);
+                    materialWireframeInput.checked = materialWireframe == true;
+                    materialWireframeInput.addEventListener("change", function(){
+                        selectedObject.material.wireframe = materialWireframeInput.checked == true;
                         selectedObject.material.needsUpdate = true;
                         save_project();
                     });
