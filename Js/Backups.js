@@ -16,6 +16,8 @@ function save_project(){
     let sceneStr = JSON.stringify(scene);
     localStorage.setItem("scene", sceneStr);
     scene.add(selectedObjectBBox);
+
+    display_message("Your project has been saved.");
 }
 
 // This procedure restores the scene from a localStorage backup

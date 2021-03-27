@@ -33,7 +33,7 @@ function display_message(message){
     if (headerMessage != null){
         headerMessage.parentElement.removeChild("headerMessage");
     }
-    console.log(header)
+    
     let messageParagraph = add_element(header, "a");
     messageParagraph.innerHTML = message;
     messageParagraph.style.fontSize = "16px";
