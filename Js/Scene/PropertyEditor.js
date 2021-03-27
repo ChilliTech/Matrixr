@@ -63,6 +63,7 @@ function update_property_editor(){
 
                 add_element(propertyEditor, "hr");
             } else if (key == "material"){
+                // The color of the material
                 if (selectedObject.material.color != undefined){
                     let materialColorR = selectedObject.material.color.r * 255;
                     let materialColorG = selectedObject.material.color.g * 255;
@@ -74,9 +75,9 @@ function update_property_editor(){
                         selectedObject.material.color.g = hexToRgb(materialColorInput.value).g / 255;
                         selectedObject.material.color.b = hexToRgb(materialColorInput.value).b / 255;
                     });
-    
                 }
                 
+                // The emissive color of the material
                 if (selectedObject.material.emissive != undefined){
                     let materialEmissiveR = selectedObject.material.emissive.r * 255;
                     let materialEmissiveG = selectedObject.material.emissive.g * 255;
@@ -90,7 +91,8 @@ function update_property_editor(){
                         save_project();
                     });
                 }
-
+                
+                // The flat shading property of the material
                 if (selectedObject.material.flatShading != undefined){
                     let materialFlatShading = selectedObject.material.flatShading;
     
@@ -102,6 +104,20 @@ function update_property_editor(){
                         save_project();
                     });
                 }
+                
+                add_element(propertyEditor, "hr");
+            } else if (key == "background"){
+                let colorR = selectedObject.background.r * 255;
+                let colorG = selectedObject.background.g * 255;
+                let colorB = selectedObject.background.b * 255;
+
+                let colorInput = add_input_field(propertyEditor, "Background Color: ", "color", rgbToHex(colorR, colorG, colorB));
+                colorInput.addEventListener("change", function(){
+                    selectedObject.background.r = hexToRgb(colorInput.value).r / 255;
+                    selectedObject.background.g = hexToRgb(colorInput.value).g / 255;
+                    selectedObject.background.b = hexToRgb(colorInput.value).b / 255;
+                    save_project();
+                });
 
                 add_element(propertyEditor, "hr");
             } else if (key == "position"){
