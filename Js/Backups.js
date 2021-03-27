@@ -98,3 +98,7 @@ function restore_from_backup(){
 // When the file is refreshed or opened, this file (along with all the other source files) will be run.
 // So, when you refresh or open the page, it'll run this function.
 restore_from_save();
+
+window.onbeforeunload = function(e){
+    e.returnValue = "Reload site? Changes you made may not be saved.";
+}
