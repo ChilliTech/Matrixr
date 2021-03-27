@@ -133,6 +133,20 @@ function update_property_editor(){
                     });
                 }
 
+                // The reflectivity property of the material
+                if (selectedObject.material.metalness != undefined){
+                    let materialReflectivity = selectedObject.material.reflectivity;
+
+                    let materialReflectivityInput = add_input_field(propertyEditor, "Material Reflectivity: ", "range", materialReflectivity);
+                    materialReflectivityInput.min = 0;
+                    materialReflectivityInput.max = 100;
+                    materialReflectivityInput.addEventListener("change", function(){
+                        selectedObject.material.reflectivity = materialReflectivityInput.value / 100;
+                        selectedObject.material.needsUpdate = true;
+                        save_project();
+                    });
+                }
+
                 add_element(propertyEditor, "hr");
             } else if (key == "background"){
                 let colorR = selectedObject.background.r * 255;
