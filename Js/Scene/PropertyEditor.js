@@ -30,7 +30,7 @@ function update_property_editor(){
             scene.remove(selectedObject);
             select_object(scene);
             update_scene_tree();
-            update_properties_editor();
+            update_property_editor();
             save_project();
         }
     });
