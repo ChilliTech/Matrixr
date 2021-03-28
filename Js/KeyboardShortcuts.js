@@ -53,7 +53,7 @@ document.body.addEventListener("keyup", function(e){
         else if (helpWindow.style.display == "block") helpWindow.style.display = "none";
     }
 
-    else if (e.key == "q"){
+    else if (e.key == "f"){
         switch_ui_mode();
     }
 
