@@ -54,10 +54,6 @@ camera.position.y = 5;
 camera.position.z = 10;
 camera.lookAt(0, 0, 0);
 
-// The orientation gizmo
-var orientationGizmo = new OrientationGizmo(camera, { size: 100, padding: 8 });
-document.body.appendChild(orientationGizmo);
-
 // The renderer
 let renderer = new THREE.WebGLRenderer(
     {
@@ -79,6 +75,15 @@ document.body.appendChild(renderer.domElement);
 
 // The orbit controls
 let controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+// The orientation gizmo
+var orientationGizmo = new OrientationGizmo(camera, { size: 100, padding: 8 });
+document.body.appendChild(orientationGizmo);
+orientationGizmo.onAxisSelected = function(axis) {
+    let distance = camera.position.distanceTo(controls.target);
+    camera.position.copy(axis.direction.multiplyScalar(distance).add(controls.target));
+    camera.lookAt(controls.target);
+}
 
 // The directional light & helper
 let directionalLight = new THREE.DirectionalLight(0xcccccc);
