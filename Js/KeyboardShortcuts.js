@@ -18,6 +18,10 @@ document.body.addEventListener("keydown", function(e){
         else if (helpWindow.style.display == "block") helpWindow.style.display = "none";
     }
 
+    else if (e.key == "q"){
+        switch_ui_mode();
+    }
+
     else if (e.key == "e"){
         
     }
