@@ -12,6 +12,7 @@
             <div class="subNav">
                 <a href="#" class="subNavBtn">File &#9660;</a>
                 <div class="subNavContent">
+                    <a href="#" onclick="helpWindow.style.display = 'block'">Help</a>
                     <a href="#" onclick="save_project()">Save</a>
                     <a href="#" onclick="backup_project()">Backup</a>
                     <a href="#" onclick="restore_from_backup()">Restore</a>
@@ -40,6 +41,16 @@
         </section>
 
         <canvas id="mainCanvas">Sorry, your browser doesn't support the <code>canvas</code> element.</canvas>
+
+        <div id="helpWindow">
+            <h1>Tutorial - Matrixr</h1>
+            <p>Welcome to Matrixr! This project is available on Github at: <a href="https://github.com/ChilliTech/Matrixr">https://github.com/ChilliTech/Matrixr</a>. The aim of this project is to provide an easy way for anyone to create some basic 3d designs from their browser - even if your computer is about as powerful as a potato!</p>
+            <h3>Keyboard Shortcuts:</h3>
+            <ul>
+                <li>Open & Close This Window <code><b>?</b></code></li>
+                <li>Save <code><b>CTRL-S, Autosave</b></code></li>
+            </ul>
+        </div>
 
         <div id="btns">
             <img src="Images/ZoomIn.svg" onclick="camera.translateZ(-2)"/>

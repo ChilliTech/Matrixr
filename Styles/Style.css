@@ -20,6 +20,10 @@
     margin-bottom: 4px;
 }
 
+#mainHeader, h1, h2, h3, h4, h5{
+    font-family: "Oswald", sans-serif;
+}
+
 input[type=text], input[type=number]{
     border: none;
     background-color: #f5f5f5;

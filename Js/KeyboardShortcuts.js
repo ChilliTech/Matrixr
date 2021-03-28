@@ -13,6 +13,11 @@ document.body.addEventListener("keydown", function(e){
         }
     }
 
+    else if (e.key == "?"){
+        if (helpWindow.style.display == "none") helpWindow.style.display = "block";
+        else if (helpWindow.style.display == "block") helpWindow.style.display = "none";
+    }
+
     else if (e.key == "e"){
         
     }
