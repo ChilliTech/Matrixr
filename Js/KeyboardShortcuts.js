@@ -37,6 +37,7 @@ let transforming = false;
 let transformingAxis = "xz"; // I NEED TO IMPLEMENT THIS SO THAT THE USER CAN USE THE MOUSE TO TRANSFORM ALONG A CERTAIN AXIS
 
 document.body.addEventListener("keyup", function(e){
+    console.log(e.shiftKey)
     if (focusing == true) return;
 
     // Saving - ctrl + s, or cmd + s
@@ -56,14 +57,15 @@ document.body.addEventListener("keyup", function(e){
         switch_ui_mode();
     }
 
-    else if ((e.key == "e") || (e.key == "r") || (e.key == "t")){
+    else if ((e.key == "s") || (e.key == "r") || (e.key == "t")){
         if (transforming != false){
             transforming = false;
+            transformingAxis = "xz";
             save_project();
             return;
         }
 
-        if (e.key == "e") transforming = "scale";
+        if (e.key == "s") transforming = "scale";
         if (e.key == "r") transforming = "rotation";
         if (e.key == "t") transforming = "position";
 
