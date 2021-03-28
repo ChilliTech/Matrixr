@@ -37,7 +37,6 @@ let transforming = false;
 let transformingAxis = "xz"; // I NEED TO IMPLEMENT THIS SO THAT THE USER CAN USE THE MOUSE TO TRANSFORM ALONG A CERTAIN AXIS
 
 document.body.addEventListener("keyup", function(e){
-    console.log(e.shiftKey)
     if (focusing == true) return;
 
     // Saving - ctrl + s, or cmd + s
@@ -88,9 +87,13 @@ document.body.addEventListener("keyup", function(e){
     else if ((e.key == "x") || (e.key == "y") || (e.key == "z")){
         // If you press the same axis twice, chaneg the axis to the default value
         if (e.key == transformingAxis) transformingAxis = "xz";
-        else{
-            transformingAxis = e.key;
-        }
+        else transformingAxis = e.key;
+    }
+
+    else if ((e.key == "X") || (e.key == "Y") || (e.key == "Z")){
+        if (e.key == "X") transformingAxis = "yz";
+        if (e.key == "Y") transformingAxis = "xz";
+        if (e.key == "Z") transformingAxis = "xy";
     }
 
     else if (e.key == "Escape"){
