@@ -191,6 +191,16 @@ function update_property_editor(){
                 }
 
                 add_element(propertyEditor, "hr");
+            } else if (key == "intensity"){
+                let intensity = selectedObject.intensity;
+
+                let intensityInput = add_input_field(propertyEditor, "Intensity", "number", intensity);
+                intensityInput.step = 0.25;
+                intensityInput.addEventListener("change", function(){
+                    selectedObject.intensity = intensityInput.value;
+                });
+
+                add_element(propertyEditor, "hr");
             } else if (key == "background"){
                 let colorR = selectedObject.background.r * 255;
                 let colorG = selectedObject.background.g * 255;
