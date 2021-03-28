@@ -23,6 +23,7 @@ let sceneTree = document.getElementById("sceneTree");
 let objectSearchBar = document.getElementById("objectSearchBar");
 let helpWindow = document.getElementById("helpWindow");
 helpWindow.style.display = "block";
+let isLightMode = true;
 
 let resetProjectPrompt = "Are you sure you want to reset the whole project (it will clear everything you have saved - unless you have downloaded a backup)?";
 let backupFileNamePrompt = "Please enter a name for your downloaded backup file:";

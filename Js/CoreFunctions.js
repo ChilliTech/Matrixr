@@ -49,3 +49,33 @@ function display_message(message){
         6000
     );
 }
+
+function switch_mode(){
+    // Get the root element
+    let r = document.querySelector(':root');
+
+    // Get the css styles for the root
+    let rs = getComputedStyle(r);
+
+    /*let highlightColor = rs.getPropertyValue("--highlightColor");
+    let primaryBackgroundColor = rs.getPropertyValue("--primaryBackgroundColor");
+    let secondaryBackgroundColor = rs.getPropertyValue("--secondaryBackgroundColor");
+    let textColor = rs.getPropertyValue("--textColor");*/
+
+    // if it's currently light mode, change it to dark mode
+    if (isLightMode == true){
+        r.style.setProperty("--highlightColor", "#4ba3f4");
+        r.style.setProperty("--primaryBackgroundColor", "#323232");
+        r.style.setProperty("--secondaryBackgroundColor", "#444444");
+        r.style.setProperty("--textColor", "#ffffff");
+
+        isLightMode = false;
+    } else {
+        r.style.setProperty("--highlightColor", "#4ba3f4");
+        r.style.setProperty("--primaryBackgroundColor", "#ffffff");
+        r.style.setProperty("--secondaryBackgroundColor", "#f5f5f5");
+        r.style.setProperty("--textColor", "#000000");
+
+        isLightMode = true;
+    }
+}

@@ -1,10 +1,12 @@
 #sceneTree, #propertyEditor, #objectCreator{
     padding: 16px;
-    border-top: 2px solid #f5f5f5;
-    border-bottom: 2px solid #f5f5f5;
+    border-top: 2px solid var(--secondaryBackgroundColor);
+    border-bottom: 2px solid var(--secondaryBackgroundColor);
     line-height: 8px;
     overflow-y: scroll;
     white-space: nowrap;
+    background-color: var(--primaryBackgroundColor);
+    color: var(--textColor);
 }
 
 #sceneTree p:hover, #objectCreator p:hover{
@@ -26,7 +28,8 @@
 
 input[type=text], input[type=number]{
     border: none;
-    background-color: #f5f5f5;
+    background-color: var(--secondaryBackgroundColor);
+    color: var(--textColor);
     padding: 8px;
     border-radius: 8px;
 }
@@ -55,7 +58,7 @@ button{
 }
 
 hr{
-    border: 2px solid #f5f5f5;
+    border: 2px solid var(--secondaryBackgroundColor);
     width: 100%;
 }
 
