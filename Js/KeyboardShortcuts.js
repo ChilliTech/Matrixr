@@ -34,8 +34,7 @@ let mousePosBefore = {
 // * "rotation"
 // * "scale"
 let transforming = false;
-
-let transformingAxis = "x"; // I NEED TO IMPLEMENT THIS SO THAT THE USER CAN USE THE MOUSE TO TRANSFORM ALONG A CERTAIN AXIS
+let transformingAxis = "xz"; // I NEED TO IMPLEMENT THIS SO THAT THE USER CAN USE THE MOUSE TO TRANSFORM ALONG A CERTAIN AXIS
 
 document.body.addEventListener("keyup", function(e){
     if (focusing == true) return;
@@ -82,6 +81,14 @@ document.body.addEventListener("keyup", function(e){
         transformsBefore.scale.x = selectedObject.scale.x;
         transformsBefore.scale.y = selectedObject.scale.y;
         transformsBefore.scale.z = selectedObject.scale.z;
+    }
+
+    else if ((e.key == "x") || (e.key == "y") || (e.key == "z")){
+        // If you press the same axis twice, chaneg the axis to the default value
+        if (e.key == transformingAxis) transformingAxis = "xz";
+        else{
+            transformingAxis = e.key;
+        }
     }
 
     else if (e.key == "Escape"){

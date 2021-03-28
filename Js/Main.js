@@ -47,12 +47,18 @@ function animate() {
     });
 
     if (transforming != false){
-        let xValue = transformsBefore[transforming].x + (mousePos.x / (window.innerWidth / 100)) - (mousePosBefore.x / (window.innerWidth / 100));
-        selectedObject[transforming].x = xValue;
-        let zValue = transformsBefore[transforming].z + (mousePos.y / (window.innerWidth / 100)) - (mousePosBefore.y / (window.innerWidth / 100));
-        selectedObject[transforming].z = zValue;
+        for (i = 0; i < transformingAxis.length; i++){
+            let axis = transformingAxis[i];
+            let value;
+            if (axis != "z"){
+                value = transformsBefore[transforming][axis] + (mousePos[axis] / (window.innerWidth / 100)) - (mousePosBefore[axis] / (window.innerWidth / 100));
+            } else {
+                value = transformsBefore[transforming][axis] + (mousePos.y / (window.innerWidth / 100)) - (mousePosBefore.y / (window.innerWidth / 100));
+            }
+            selectedObject[transforming][axis] = value;
+        }
         update_property_editor();
-        select_object(selectedObject);
+        draw_bbox(selectedObject);
     }
 
     orientationGizmo.update();
