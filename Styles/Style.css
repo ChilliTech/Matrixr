@@ -34,6 +34,10 @@ input[type=text], input[type=number]{
     border-radius: 8px;
 }
 
+input[type=text]::placeholder, input[type=number]::placeholder{
+    color: #bcbcbc;
+}
+
 input:focus{
     outline: none;
     border: 2px solid var(--highlightColor);
