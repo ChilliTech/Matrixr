@@ -74,3 +74,5 @@ function switch_ui_mode(){
         isLightMode = true;
     }
 }
+
+document.getElementById("helpWindowCloseBtn").addEventListener("click", function(){ helpWindow.style.display = "none" });
