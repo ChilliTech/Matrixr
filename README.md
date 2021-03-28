@@ -11,6 +11,9 @@ This branch was created to re-do the project to implement some core features suc
 * The ability to do proper 3D modelling & to select individual parts of a mesh as well as the whole thing.
 * The ability to add modifiers to objects.
 * A raytracing renderer.
+* Particle systems.
+* A prompt to change the resolution of geometric shapes.
+* An easier way to change an object's transforms without having to use the properties menu.
 
 # Contributing
 I would be grateful if you were able to contribute in any way! Feel free to either find something to help with in the projects board - or if you would prefer to do something else, just open a new issue, and assign yourself to it.
