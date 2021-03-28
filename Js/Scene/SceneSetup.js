@@ -54,6 +54,10 @@ camera.position.y = 5;
 camera.position.z = 10;
 camera.lookAt(0, 0, 0);
 
+// The orientation gizmo
+var orientationGizmo = new OrientationGizmo(camera, { size: 100, padding: 8 });
+document.body.appendChild(orientationGizmo);
+
 // The renderer
 let renderer = new THREE.WebGLRenderer(
     {

@@ -50,6 +50,8 @@ function animate() {
         select_object(selectedObject);
     }
 
+    orientationGizmo.update();
+
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }

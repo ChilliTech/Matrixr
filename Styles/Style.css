@@ -90,3 +90,9 @@ td, th {
 tr:nth-child(even) {
     background-color: var(--secondaryBackgroundColor);
 }
+
+orientation-gizmo{
+    position: absolute;
+    top: calc(40px + 16px + 32px + 16px);
+    right: 0px;
+}
