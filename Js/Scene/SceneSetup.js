@@ -29,8 +29,16 @@ let resetProjectPrompt = "Are you sure you want to reset the whole project (it w
 let backupFileNamePrompt = "Please enter a name for your downloaded backup file:";
 
 let dragged = false;
+let mousePos = {
+    "x": 0,
+    "y": 0
+};
 document.body.addEventListener("mousedown", function () { dragged = false });
-document.body.addEventListener("mousemove", function (e) { dragged = true; mousePos = [e.pageX, e.pageY] });
+document.body.addEventListener("mousemove", function (e) { 
+    dragged = true; 
+    mousePos.x = e.pageX; 
+    mousePos.y = e.pageY;
+});
 
 // ONLY FOR DEBBUGGING!
 //(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='https://mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})();

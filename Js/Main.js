@@ -41,6 +41,15 @@ function animate() {
         renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
     });
 
+    if (transforming != false){
+        let xValue = transformsBefore[transforming].x + (mousePos.x / (window.innerWidth / 100)) - (mousePosBefore.x / (window.innerWidth / 100));
+        selectedObject[transforming].x = xValue;
+        let zValue = transformsBefore[transforming].z + (mousePos.y / (window.innerWidth / 100)) - (mousePosBefore.y / (window.innerWidth / 100));
+        selectedObject[transforming].z = zValue;
+        update_property_editor();
+        select_object(selectedObject);
+    }
+
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
