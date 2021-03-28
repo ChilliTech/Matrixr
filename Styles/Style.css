@@ -75,3 +75,18 @@ hr{
     font-weight: bold;
     text-decoration: none;
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid var(--secondaryBackgroundColor);
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--secondaryBackgroundColor);
+}
