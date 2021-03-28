@@ -14,10 +14,7 @@ let availableObjects = {
             let mesh = new THREE.Mesh(geometry, material);
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
-
             select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
         }
     },
 
@@ -32,10 +29,7 @@ let availableObjects = {
             let mesh = new THREE.Mesh(geometry, material);
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
-
             select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
         }
     },
 
@@ -50,10 +44,7 @@ let availableObjects = {
             let mesh = new THREE.Mesh(geometry, material);
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
-
             select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
         }
     },
 
@@ -68,10 +59,7 @@ let availableObjects = {
             let mesh = new THREE.Mesh(geometry, material);
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
-
             select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
         }
     },
 
@@ -86,10 +74,7 @@ let availableObjects = {
             let mesh = new THREE.Mesh(geometry, material);
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
-
             select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
         }
     },
 
@@ -104,10 +89,7 @@ let availableObjects = {
             let mesh = new THREE.Mesh(geometry, material);
             mesh.name = "Object (" + sceneTree.children.length + ")";
             scene.add(mesh);
-
             select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
         }
     },
 
@@ -121,10 +103,7 @@ let availableObjects = {
             let lightHelper = new THREE.DirectionalLightHelper(light, 2, 0x888888);
             lightHelper.name = "Object (" + sceneTree.children.length + ") Helper";
             light.add(lightHelper);
-
-            select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
+            select_object(light);
         }
     },
 
@@ -134,10 +113,7 @@ let availableObjects = {
             let light = new THREE.AmbientLight(scene.background, 0.15);
             light.name = "Object (" + sceneTree.children.length + ")";
             scene.add(light);
-
-            select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
+            select_object(light);
         }
     },
 
@@ -151,10 +127,7 @@ let availableObjects = {
             let lightHelper = new THREE.HemisphereLightHelper(light, 2, 0x888888);
             lightHelper.name = "Object (" + sceneTree.children.length + ") Helper";
             light.add(lightHelper);
-
-            select_object(mesh);
-            update_scene_tree();
-            update_property_editor();
+            select_object(light);
         }
     }
 };

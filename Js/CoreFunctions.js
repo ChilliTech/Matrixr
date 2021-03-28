@@ -50,17 +50,12 @@ function display_message(message){
     );
 }
 
-function switch_mode(){
+function switch_ui_mode(){
     // Get the root element
     let r = document.querySelector(':root');
 
     // Get the css styles for the root
     let rs = getComputedStyle(r);
-
-    /*let highlightColor = rs.getPropertyValue("--highlightColor");
-    let primaryBackgroundColor = rs.getPropertyValue("--primaryBackgroundColor");
-    let secondaryBackgroundColor = rs.getPropertyValue("--secondaryBackgroundColor");
-    let textColor = rs.getPropertyValue("--textColor");*/
 
     // if it's currently light mode, change it to dark mode
     if (isLightMode == true){

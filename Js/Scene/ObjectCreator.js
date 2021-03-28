@@ -10,7 +10,13 @@ for (let key in availableObjects){
         element.style.color = "var(--highlightColor)";
         element.style.textDecoration = "underline";
         element.innerHTML = key;
-        element.addEventListener("click", function(){ availableObjects[key].add() });
+        element.addEventListener("click", function(){ 
+            availableObjects[key].add()
+
+            update_scene_tree();
+            update_property_editor();
+            save_project();
+        });
     }
 }
 
@@ -29,8 +35,13 @@ objectSearchBar.addEventListener("change", function(){
                 element.style.color = "var(--highlightColor)";
                 element.style.textDecoration = "underline";
                 element.innerHTML = key;
-                element.addEventListener("click", function(){ availableObjects[key].add() });
-                save_project();
+                element.addEventListener("click", function(){
+                    availableObjects[key].add()
+
+                    update_scene_tree();
+                    update_property_editor();
+                    save_project();
+                });
             }
         }
     }

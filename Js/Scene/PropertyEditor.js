@@ -59,6 +59,7 @@ function update_property_editor(){
                     selectedObject.color.r = hexToRgb(colorInput.value).r / 255;
                     selectedObject.color.g = hexToRgb(colorInput.value).g / 255;
                     selectedObject.color.b = hexToRgb(colorInput.value).b / 255;
+                    save_project();
                 });
 
                 add_element(propertyEditor, "hr");
@@ -74,6 +75,7 @@ function update_property_editor(){
                         selectedObject.material.color.r = hexToRgb(materialColorInput.value).r / 255;
                         selectedObject.material.color.g = hexToRgb(materialColorInput.value).g / 255;
                         selectedObject.material.color.b = hexToRgb(materialColorInput.value).b / 255;
+                        save_project();
                     });
                 }
                 

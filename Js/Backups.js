@@ -13,10 +13,8 @@ function new_project(){
 // This procedure saves the scene to localstorage
 function save_project(){
     scene.remove(selectedObjectBBox);
-    let sceneStr = JSON.stringify(scene);
-    localStorage.setItem("scene", sceneStr);
+    localStorage.setItem("scene", JSON.stringify(scene));
     scene.add(selectedObjectBBox);
-
     display_message("Your project has been saved.");
 }
 
@@ -104,3 +102,8 @@ function restore_from_backup(){
 // When the file is refreshed or opened, this file (along with all the other source files) will be run.
 // So, when you refresh or open the page, it'll run this function.
 restore_from_save();
+
+// Save the project when the page is left
+window.onbeforeunload = function(){
+    //save_project();
+}
