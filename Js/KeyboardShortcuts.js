@@ -35,6 +35,8 @@ let mousePosBefore = {
 // * "scale"
 let transforming = false;
 
+let transformingAxis = "x"; // I NEED TO IMPLEMENT THIS SO THAT THE USER CAN USE THE MOUSE TO TRANSFORM ALONG A CERTAIN AXIS
+
 document.body.addEventListener("keyup", function(e){
     if (focusing == true) return;
 
@@ -94,7 +96,7 @@ document.body.addEventListener("keyup", function(e){
         selectedObject.scale.x = transformsBefore.scale.x;
         selectedObject.scale.y = transformsBefore.scale.y;
         selectedObject.scale.z = transformsBefore.scale.z;
-        
+
         transforming = false;
         save_project();
     }
