@@ -5,6 +5,7 @@
 // Make it so when you click the canvas it selects the object that's being clicked
 document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
     if (dragged == true) return;
+    helpWindow.style.display = "none";
 
     // Left click, select objects
     if (e.button == 0){
