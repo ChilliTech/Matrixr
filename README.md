@@ -15,6 +15,9 @@ This branch was created to re-do the project to implement some core features suc
 * A prompt to change the resolution of geometric shapes.
 * An easier way to change an object's transforms without having to use the properties menu.
 
+# Usage
+Matrixr was designed to be very easy to use. You can either download the project & run the index.html file, or you can just view the project via Github pages - https://chillitech.github.io/Matrixr/.
+
 # Contributing
 I would be grateful if you were able to contribute in any way! Feel free to either find something to help with in the projects board - or if you would prefer to do something else, just open a new issue, and assign yourself to it.
 Please also feel free to post any questions or comments in the "discussions" section!
