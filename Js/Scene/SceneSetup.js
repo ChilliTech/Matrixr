@@ -48,7 +48,7 @@ let scene = new THREE.Scene();
 scene.background = new THREE.Color(0xf8f8f8);
 scene.name = "MyFirstProject";
 
-// The camera
+// The user's view camera
 let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.y = 5;
 camera.position.z = 10;
