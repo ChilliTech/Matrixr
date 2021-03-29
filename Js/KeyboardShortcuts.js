@@ -99,6 +99,8 @@ document.body.addEventListener("keyup", function(e){
     }
 
     else if ((e.key == "x") || (e.key == "y") || (e.key == "z")){
+        if (transforming == false) return;
+
         reset_object_position(selectedObject);
 
         // If you press the same axis twice, change the axis to the default value
@@ -107,6 +109,8 @@ document.body.addEventListener("keyup", function(e){
     }
 
     else if ((e.key == "X") || (e.key == "Y") || (e.key == "Z")){
+        if (transforming == false) return;
+        
         reset_object_position(selectedObject);
         if (e.key == "X") transformingAxis = "yz";
         if (e.key == "Y") transformingAxis = "xz";
