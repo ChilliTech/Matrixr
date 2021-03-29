@@ -85,7 +85,7 @@ document.body.addEventListener("keyup", function(e){
     }
 
     else if ((e.key == "x") || (e.key == "y") || (e.key == "z")){
-        // If you press the same axis twice, chaneg the axis to the default value
+        // If you press the same axis twice, change the axis to the default value
         if (e.key == transformingAxis) transformingAxis = "xz";
         else transformingAxis = e.key;
     }
@@ -97,6 +97,8 @@ document.body.addEventListener("keyup", function(e){
     }
 
     else if (e.key == "Escape"){
+        if (transforming == false) return;
+
         selectedObject.position.x = transformsBefore.position.x;
         selectedObject.position.y = transformsBefore.position.y;
         selectedObject.position.z = transformsBefore.position.z;
@@ -110,6 +112,7 @@ document.body.addEventListener("keyup", function(e){
         selectedObject.scale.z = transformsBefore.scale.z;
 
         transforming = false;
+        draw_bbox(selectedObject);
         save_project();
     }
 });
