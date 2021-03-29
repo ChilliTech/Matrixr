@@ -91,6 +91,10 @@ tr:nth-child(even) {
     background-color: var(--secondaryBackgroundColor);
 }
 
+a{
+    color: var(--highlightColor);
+}
+
 #helpWindowCloseBtn{
     float: right;
 }
