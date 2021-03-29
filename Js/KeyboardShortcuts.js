@@ -36,6 +36,20 @@ let mousePosBefore = {
 let transforming = false;
 let transformingAxis = "xz"; // I NEED TO IMPLEMENT THIS SO THAT THE USER CAN USE THE MOUSE TO TRANSFORM ALONG A CERTAIN AXIS
 
+function reset_object_position(object){
+    object.position.x = transformsBefore.position.x;
+    object.position.y = transformsBefore.position.y;
+    object.position.z = transformsBefore.position.z;
+
+    object.rotation.x = transformsBefore.rotation.x;
+    object.rotation.y = transformsBefore.rotation.y;
+    object.rotation.z = transformsBefore.rotation.z;
+
+    object.scale.x = transformsBefore.scale.x;
+    object.scale.y = transformsBefore.scale.y;
+    object.scale.z = transformsBefore.scale.z;
+}
+
 document.body.addEventListener("keyup", function(e){
     if (focusing == true) return;
 
@@ -85,12 +99,15 @@ document.body.addEventListener("keyup", function(e){
     }
 
     else if ((e.key == "x") || (e.key == "y") || (e.key == "z")){
+        reset_object_position(selectedObject);
+
         // If you press the same axis twice, change the axis to the default value
         if (e.key == transformingAxis) transformingAxis = "xz";
         else transformingAxis = e.key;
     }
 
     else if ((e.key == "X") || (e.key == "Y") || (e.key == "Z")){
+        reset_object_position(selectedObject);
         if (e.key == "X") transformingAxis = "yz";
         if (e.key == "Y") transformingAxis = "xz";
         if (e.key == "Z") transformingAxis = "xy";
@@ -99,17 +116,7 @@ document.body.addEventListener("keyup", function(e){
     else if (e.key == "Escape"){
         if (transforming == false) return;
 
-        selectedObject.position.x = transformsBefore.position.x;
-        selectedObject.position.y = transformsBefore.position.y;
-        selectedObject.position.z = transformsBefore.position.z;
-
-        selectedObject.rotation.x = transformsBefore.rotation.x;
-        selectedObject.rotation.y = transformsBefore.rotation.y;
-        selectedObject.rotation.z = transformsBefore.rotation.z;
-
-        selectedObject.scale.x = transformsBefore.scale.x;
-        selectedObject.scale.y = transformsBefore.scale.y;
-        selectedObject.scale.z = transformsBefore.scale.z;
+        reset_object_position(selectedObject);
 
         transforming = false;
         draw_bbox(selectedObject);
