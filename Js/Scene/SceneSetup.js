@@ -21,6 +21,21 @@ let canvas = document.getElementById("mainCanvas");
 let header = document.getElementById("mainHeader");
 let sceneTree = document.getElementById("sceneTree");
 let objectSearchBar = document.getElementById("objectSearchBar");
+let UIMoveLeft = document.getElementById("UIMoveLeft");
+let UIMoveRight = document.getElementById("UIMoveRight");
+let UIPosition = document.getElementById("UIPosition");
+let UIRotate = document.getElementById("UIRotate");
+let UIScale = document.getElementById("UIScale");
+let UIX = document.getElementById("UIX");
+let UIY = document.getElementById("UIY");
+let UIZ = document.getElementById("UIZ");
+// Can be:
+// * "position"
+// * "rotation"
+// * "scale"
+let UITransform = "position";
+
+let UITransformAxis = "x";
 let helpWindow = document.getElementById("helpWindow");
 helpWindow.style.display = "block";
 let isLightMode = true;
