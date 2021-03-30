@@ -126,4 +126,8 @@ document.body.addEventListener("keyup", function(e){
         draw_bbox(selectedObject);
         save_project();
     }
+
+    else if (e.key == "d"){
+        duplicate_object(selectedObject);
+    }
 });

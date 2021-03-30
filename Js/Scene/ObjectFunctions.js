@@ -18,3 +18,14 @@ function select_object(object){
     selectedObject = object;
     draw_bbox(object);
 }
+
+function duplicate_object(selectedObject){
+    let mesh = selectedObject.clone();
+    mesh.name = "Object (" + scene.children.length + ")";
+    scene.add(mesh);
+
+    select_object(mesh);
+    update_scene_tree();
+    update_property_editor();
+    save_project();
+}

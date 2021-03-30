@@ -41,14 +41,7 @@ function update_property_editor(){
     let duplicateObjectBtn = add_element(propertyEditor, "button");
     duplicateObjectBtn.innerHTML = "Duplicate This Object";
     duplicateObjectBtn.addEventListener("click", function(){
-        let mesh = selectedObject.clone();
-        mesh.name = "Object (" + scene.children.length + ")";
-        scene.add(mesh);
-
-        select_object(mesh);
-        update_scene_tree();
-        update_property_editor();
-        save_project();
+        duplicate_object(selectedObject);
     });
 
     add_element(propertyEditor, "hr");
