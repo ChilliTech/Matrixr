@@ -7,6 +7,7 @@ document.getElementById("mainCanvas").addEventListener("mouseup", function(e){
     if (dragged == true) return;
     if (transforming != false){
         if (e.button == 2) reset_object_position(selectedObject);
+        draw_bbox(selectedObject);
         transforming = false;
         save_project();
         return;

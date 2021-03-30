@@ -75,4 +75,8 @@ function switch_ui_mode(){
     }
 }
 
+function render_image(){
+    
+}
+
 document.getElementById("helpWindowCloseBtn").addEventListener("click", function(){ helpWindow.style.display = "none" });

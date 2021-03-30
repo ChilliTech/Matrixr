@@ -137,11 +137,13 @@
 
         <div id="customMesh">
             <p id="customMeshApply">&#8677;</p>
+            <p class="closeBtn" onclick="customMesh.style.display = 'none'">&#x2715</p>
             <p id="customMeshText">Click to add points...</p>
         </div>
 
         <div id="btns">
-            <img src="Images/AddObject.svg" onclick="add_custom_object(); save_project();" />
+            <img src="Images/Camera.svg" onclick="render_image()" />
+            <img src="Images/AddObject.svg" onclick="add_custom_object(); save_project()" />
             <img src="Images/ZoomIn.svg" onclick="camera.translateZ(-2)"/>
             <img src="Images/ZoomOut.svg" onclick="camera.translateZ(2)" />
         </div>
