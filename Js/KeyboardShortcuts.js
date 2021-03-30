@@ -70,7 +70,7 @@ document.body.addEventListener("keyup", function(e){
         switch_ui_mode();
     }
 
-    else if ((e.key == "s") || (e.key == "r") || (e.key == "t")){
+    else if ((e.key == "s") || (e.key == "r") || (e.key == "p")){
         if (transforming != false){
             transforming = false;
             transformingAxis = "xz";
@@ -80,7 +80,7 @@ document.body.addEventListener("keyup", function(e){
 
         if (e.key == "s") transforming = "scale";
         if (e.key == "r") transforming = "rotation";
-        if (e.key == "t") transforming = "position";
+        if (e.key == "p") transforming = "position";
 
         mousePosBefore.x = mousePos.x;
         mousePosBefore.y = mousePos.y;
