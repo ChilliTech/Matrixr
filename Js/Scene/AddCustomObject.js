@@ -9,6 +9,7 @@ function add_custom_object(){
 
     function apply_points(){
         if (!"applyCustomMeshPrompt") return;
+        if (points.length < 3) return;
 
         points.push(points[0]);
         let shape = new THREE.Shape();
