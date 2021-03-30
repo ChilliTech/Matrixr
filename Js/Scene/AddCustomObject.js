@@ -7,7 +7,8 @@ function add_custom_object(){
     let cubeVertices = [];
     let lineEdges = [];
 
-    customMeshApply.addEventListener("click", function(){
+    function apply_points(){
+        console.log("Hello")
         if (!"applyCustomMeshPrompt") return;
 
         points.push(points[0]);
@@ -37,18 +38,15 @@ function add_custom_object(){
         // Remove all the points from customMesh
         customMesh.style.display = "none";
         customMesh.removeEventListener("click", add_point);
+        customMeshApply.removeEventListener("click", apply_points);
         customMesh.replaceChildren();
         customMesh.appendChild(customMeshApply);
 
         select_object(mesh);
         update_scene_tree();
         update_property_editor();
-        save_project();
+    }
 
-    });
-
-    customMesh.style.display = "block";
-    
     function add_point(e){
         if (e.target.id == "customMeshApply") return;
 
@@ -62,5 +60,8 @@ function add_custom_object(){
         points.push(new THREE.Vector3((e.clientX / canvas.offsetWidth) * 2 - 1, 0, (e.clientY / canvas.offsetHeight) * 2 + 1));
     }
 
+    customMesh.style.display = "block";
+    customMeshApply.removeEventListener("click", apply_points);
+    customMeshApply.addEventListener("click", apply_points);
     customMesh.addEventListener("click", function(e){ add_point(e) });
 }
