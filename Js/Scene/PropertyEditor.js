@@ -104,7 +104,7 @@ function update_property_editor(){
                     let materialFlatShadingInput = add_input_field(propertyEditor, "Material Flat Shading:", "checkbox", false);
                     materialFlatShadingInput.checked = materialFlatShading == true;
                     materialFlatShadingInput.addEventListener("change", function(){
-                        selectedObject.material.flatShading = materialFlatShadingInput.checked == true;
+                        selectedObject.material.flatShading = materialFlatShadingInput.checked;
                         selectedObject.material.needsUpdate = true;
                         save_project();
                     });
@@ -117,7 +117,7 @@ function update_property_editor(){
                     let materialWireframeInput = add_input_field(propertyEditor, "Material Wireframe:", "checkbox", false);
                     materialWireframeInput.checked = materialWireframe == true;
                     materialWireframeInput.addEventListener("change", function(){
-                        selectedObject.material.wireframe = materialWireframeInput.checked == true;
+                        selectedObject.material.wireframe = materialWireframeInput.checked;
                         selectedObject.material.needsUpdate = true;
                         save_project();
                     });
@@ -201,6 +201,16 @@ function update_property_editor(){
                 intensityInput.step = 0.25;
                 intensityInput.addEventListener("change", function(){
                     selectedObject.intensity = intensityInput.value;
+                });
+
+                add_element(propertyEditor, "hr");
+            } else if (key == "visible"){
+                let visible = selectedObject.visible;
+
+                let visibleInput = add_input_field(propertyEditor, "Visible: ", "checkbox", false);
+                visibleInput.checked = visible == true;
+                visibleInput.addEventListener("change", function(){
+                    selectedObject.visible = visibleInput.checked;
                 });
 
                 add_element(propertyEditor, "hr");
