@@ -8,7 +8,6 @@ function add_custom_object(){
     let lineEdges = [];
 
     function apply_points(){
-        console.log("Hello")
         if (!"applyCustomMeshPrompt") return;
 
         points.push(points[0]);
@@ -41,6 +40,7 @@ function add_custom_object(){
         customMeshApply.removeEventListener("click", apply_points);
         customMesh.replaceChildren();
         customMesh.appendChild(customMeshApply);
+        customMesh.appendChild(customMeshText);
 
         select_object(mesh);
         update_scene_tree();

@@ -105,3 +105,8 @@ body{
 #customMesh:hover{
     cursor: crosshair;
 }
+
+#customMeshPoints{
+    width: 100%;
+    height: 100%;
+}

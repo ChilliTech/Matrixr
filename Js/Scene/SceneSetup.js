@@ -23,6 +23,7 @@ let sceneTree = document.getElementById("sceneTree");
 let objectSearchBar = document.getElementById("objectSearchBar");
 let customMesh = document.getElementById("customMesh");
 let customMeshApply = document.getElementById("customMeshApply");
+let customMeshText = document.getElementById("customMeshText");
 let UIMoveLeft = document.getElementById("UIMoveLeft");
 let UIMoveRight = document.getElementById("UIMoveRight");
 let UIPosition = document.getElementById("UIPosition");
