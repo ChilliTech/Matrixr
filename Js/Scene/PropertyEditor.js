@@ -37,6 +37,22 @@ function update_property_editor(){
 
     add_element(propertyEditor, "hr");
 
+    // After that, add a button to duplicate the selected object
+    let duplicateObjectBtn = add_element(propertyEditor, "button");
+    duplicateObjectBtn.innerHTML = "Duplicate This Object";
+    duplicateObjectBtn.addEventListener("click", function(){
+        let mesh = selectedObject.clone();
+        mesh.name = "Object (" + scene.children.length + ")";
+        scene.add(mesh);
+
+        select_object(mesh);
+        update_scene_tree();
+        update_property_editor();
+        save_project();
+    });
+
+    add_element(propertyEditor, "hr");
+
     // Then, add input fields for the object if they exist (colour, position, etc)
     for (let key in selectedObject){
         // Avoid looping through everything twice (because of __proto__ objects)
