@@ -21,6 +21,8 @@ let canvas = document.getElementById("mainCanvas");
 let header = document.getElementById("mainHeader");
 let sceneTree = document.getElementById("sceneTree");
 let objectSearchBar = document.getElementById("objectSearchBar");
+let customMesh = document.getElementById("customMesh");
+let customMeshApply = document.getElementById("customMeshApply");
 let UIMoveLeft = document.getElementById("UIMoveLeft");
 let UIMoveRight = document.getElementById("UIMoveRight");
 let UIPosition = document.getElementById("UIPosition");
@@ -64,7 +66,7 @@ scene.background = new THREE.Color(0xf8f8f8);
 scene.name = "MyFirstProject";
 
 // The user's view camera
-let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
+let camera = new THREE.PerspectiveCamera(40, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
 camera.position.y = 5;
 camera.position.z = 10;
 camera.lookAt(0, 0, 0);

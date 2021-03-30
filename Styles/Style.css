@@ -95,16 +95,25 @@ a{
     color: var(--highlightColor);
 }
 
-#helpWindowCloseBtn{
-    float: right;
-}
-
-#helpWindowCloseBtn:hover{
-    cursor: pointer;
-}
-
 orientation-gizmo{
     position: absolute;
     top: calc(40px + 32px + 32px);
     right: 0px;
+}
+
+.closeBtn{
+    float: right;
+}
+
+.closeBtn:hover{
+    cursor: pointer;
+}
+
+#customMeshApply{
+    float: right;
+    font-weight: bold;
+}
+
+#customMeshApply:hover{
+    cursor: pointer;
 }
