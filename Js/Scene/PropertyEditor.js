@@ -73,7 +73,7 @@ function update_property_editor(){
                     let materialColorG = selectedObject.material.color.g * 255;
                     let materialColorB = selectedObject.material.color.b * 255;
     
-                    let materialColorInput = add_input_field(propertyEditor, "Material Color: ", "color", rgbToHex(materialColorR, materialColorG, materialColorB));
+                    let materialColorInput = add_input_field(propertyEditor, "Color: ", "color", rgbToHex(materialColorR, materialColorG, materialColorB));
                     materialColorInput.addEventListener("change", function(){
                         selectedObject.material.color.r = hexToRgb(materialColorInput.value).r / 255;
                         selectedObject.material.color.g = hexToRgb(materialColorInput.value).g / 255;
@@ -88,7 +88,7 @@ function update_property_editor(){
                     let materialEmissiveG = selectedObject.material.emissive.g * 255;
                     let materialEmissiveB = selectedObject.material.emissive.b * 255;
     
-                    let materialEmissiveInput = add_input_field(propertyEditor, "Material Emissive: ", "color", rgbToHex(materialEmissiveR, materialEmissiveG, materialEmissiveB));
+                    let materialEmissiveInput = add_input_field(propertyEditor, "Emissive: ", "color", rgbToHex(materialEmissiveR, materialEmissiveG, materialEmissiveB));
                     materialEmissiveInput.addEventListener("change", function(){
                         selectedObject.material.emissive.r = hexToRgb(materialEmissiveInput.value).r / 255;
                         selectedObject.material.emissive.g = hexToRgb(materialEmissiveInput.value).g / 255;
@@ -101,7 +101,7 @@ function update_property_editor(){
                 if (selectedObject.material.flatShading != undefined){
                     let materialFlatShading = selectedObject.material.flatShading;
     
-                    let materialFlatShadingInput = add_input_field(propertyEditor, "Material Flat Shading:", "checkbox", false);
+                    let materialFlatShadingInput = add_input_field(propertyEditor, "Flat Shading:", "checkbox", false);
                     materialFlatShadingInput.checked = materialFlatShading == true;
                     materialFlatShadingInput.addEventListener("change", function(){
                         selectedObject.material.flatShading = materialFlatShadingInput.checked;
@@ -114,7 +114,7 @@ function update_property_editor(){
                 if (selectedObject.material.wireframe != undefined){
                     let materialWireframe = selectedObject.material.wireframe;
     
-                    let materialWireframeInput = add_input_field(propertyEditor, "Material Wireframe:", "checkbox", false);
+                    let materialWireframeInput = add_input_field(propertyEditor, "Wireframe:", "checkbox", false);
                     materialWireframeInput.checked = materialWireframe == true;
                     materialWireframeInput.addEventListener("change", function(){
                         selectedObject.material.wireframe = materialWireframeInput.checked;
@@ -127,7 +127,7 @@ function update_property_editor(){
                 if (selectedObject.material.roughness != undefined){
                     let materialRoughness = selectedObject.material.roughness;
 
-                    let materialRoughnessInput = add_input_field(propertyEditor, "Material Roughness: ", "range", materialRoughness);
+                    let materialRoughnessInput = add_input_field(propertyEditor, "Roughness: ", "range", materialRoughness);
                     materialRoughnessInput.min = 0;
                     materialRoughnessInput.max = 100;
                     materialRoughnessInput.addEventListener("change", function(){
@@ -141,7 +141,7 @@ function update_property_editor(){
                 if (selectedObject.material.metalness != undefined){
                     let materialMetalness = selectedObject.material.metalness;
 
-                    let materialMetalnessInput = add_input_field(propertyEditor, "Material Metalness: ", "range", materialMetalness);
+                    let materialMetalnessInput = add_input_field(propertyEditor, "Metalness: ", "range", materialMetalness);
                     materialMetalnessInput.min = 0;
                     materialMetalnessInput.max = 100;
                     materialMetalnessInput.addEventListener("change", function(){
@@ -155,7 +155,7 @@ function update_property_editor(){
                 if (selectedObject.material.reflectivity != undefined){
                     let materialReflectivity = selectedObject.material.reflectivity;
 
-                    let materialReflectivityInput = add_input_field(propertyEditor, "Material Reflectivity: ", "range", materialReflectivity);
+                    let materialReflectivityInput = add_input_field(propertyEditor, "Reflectivity: ", "range", materialReflectivity);
                     materialReflectivityInput.min = 0;
                     materialReflectivityInput.max = 100;
                     materialReflectivityInput.addEventListener("change", function(){
@@ -169,7 +169,7 @@ function update_property_editor(){
                 if (selectedObject.material.clearcoat != undefined){
                     let materialClearcoat = selectedObject.material.clearcoat;
 
-                    let materialClearcoatInput = add_input_field(propertyEditor, "Material Clearcoat: ", "range", materialClearcoat);
+                    let materialClearcoatInput = add_input_field(propertyEditor, "Clearcoat: ", "range", materialClearcoat);
                     materialClearcoatInput.min = 0;
                     materialClearcoatInput.max = 100;
                     materialClearcoatInput.addEventListener("change", function(){
@@ -183,7 +183,7 @@ function update_property_editor(){
                 if (selectedObject.material.clearcoatRoughness != undefined){
                     let materialClearcoatRoughness = selectedObject.material.clearcoatRoughness;
 
-                    let materialClearcoatRoughnessInput = add_input_field(propertyEditor, "Material Clearcoat Roughness: ", "range", materialClearcoatRoughness);
+                    let materialClearcoatRoughnessInput = add_input_field(propertyEditor, "Clearcoat Roughness: ", "range", materialClearcoatRoughness);
                     materialClearcoatRoughnessInput.min = 0;
                     materialClearcoatRoughnessInput.max = 100;
                     materialClearcoatRoughnessInput.addEventListener("change", function(){
