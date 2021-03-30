@@ -2,6 +2,12 @@
 // This file allows a custom object to be added by clicking points in a canvas
 // ***************
 
+function custom_mesh_HTML_reset(){
+    customMesh.replaceChildren();
+    customMesh.appendChild(customMeshApply);
+    customMesh.appendChild(customMeshText);
+}
+
 function add_custom_object(){
     let points = [];
     let cubeVertices = [];
@@ -39,9 +45,7 @@ function add_custom_object(){
         customMesh.style.display = "none";
         customMesh.removeEventListener("click", add_point);
         customMeshApply.removeEventListener("click", apply_points);
-        customMesh.replaceChildren();
-        customMesh.appendChild(customMeshApply);
-        customMesh.appendChild(customMeshText);
+        custom_mesh_HTML_reset();
 
         select_object(mesh);
         update_scene_tree();
