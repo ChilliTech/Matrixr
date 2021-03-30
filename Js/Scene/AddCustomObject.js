@@ -53,8 +53,8 @@ function add_custom_object(){
 
         let div = add_element(customMesh, "div");
         div.style.position = "absolute";
-        div.style.width = "10px";
-        div.style.height = "10px";
+        div.style.width = "5px";
+        div.style.height = "5px";
         div.style.backgroundColor = "#4ba3f4";
         div.style.left = (e.clientX - customMesh.offsetLeft).toString() + "px";
         div.style.top = (e.clientY - customMesh.offsetTop).toString() + "px";
