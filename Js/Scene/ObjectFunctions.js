@@ -29,3 +29,13 @@ function duplicate_object(selectedObject){
     update_property_editor();
     save_project();
 }
+
+function delete_object(selectedObject){
+    if (confirm("Are you sure you want to delete '" + selectedObject.name + "'?")){
+        scene.remove(selectedObject);
+        select_object(scene);
+        update_scene_tree();
+        update_property_editor();
+        save_project();
+    }
+}

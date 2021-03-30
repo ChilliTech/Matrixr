@@ -26,13 +26,7 @@ function update_property_editor(){
     let deleteObjectBtn = add_element(propertyEditor, "button");
     deleteObjectBtn.innerHTML = "Delete This Object";
     deleteObjectBtn.addEventListener("click", function(){
-        if (confirm("Are you sure you want to delete '" + selectedObject.name + "'?")){
-            scene.remove(selectedObject);
-            select_object(scene);
-            update_scene_tree();
-            update_property_editor();
-            save_project();
-        }
+        delete_object(selectedObject);
     });
 
     add_element(propertyEditor, "hr");
