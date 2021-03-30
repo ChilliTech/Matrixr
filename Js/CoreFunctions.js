@@ -76,7 +76,17 @@ function switch_ui_mode(){
 }
 
 function render_image(){
-    
+    let MIME_TYPE = "image/png";
+    let imgURL = mainCanvas.toDataURL(MIME_TYPE);
+
+    let dlLink = document.createElement('a');
+    dlLink.download = scene.name;
+    dlLink.href = imgURL;
+    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+
+    document.body.appendChild(dlLink);
+    dlLink.click();
+    document.body.removeChild(dlLink);
 }
 
 document.getElementById("helpWindowCloseBtn").addEventListener("click", function(){ helpWindow.style.display = "none" });
