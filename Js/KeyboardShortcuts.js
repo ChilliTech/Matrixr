@@ -134,4 +134,8 @@ document.body.addEventListener("keyup", function(e){
     else if ((e.key == "Backspace") || (e.key == "Delete")){
         delete_object(selectedObject);
     }
+
+    else if (e.key == "e"){
+        render_image();
+    }
 });
