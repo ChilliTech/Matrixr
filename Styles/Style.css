@@ -31,6 +31,7 @@ input[type=text], input[type=number]{
     background-color: var(--secondaryBackgroundColor);
     color: var(--textColor);
     padding: 8px;
+    padding-left: 16px;
     border-radius: 8px;
 }
 
@@ -124,4 +125,14 @@ orientation-gizmo{
 #customMeshText{
     margin-top: 0px;
     text-align: center;
+}
+
+#searchMenuSearchBar{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#searchMenuCloseBtn{
+    margin-top: 0px;
+    float: right;
 }

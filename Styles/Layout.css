@@ -62,7 +62,7 @@ body{
     cursor: pointer;
 }
 
-#helpWindow, #customMesh{
+#helpWindow, #customMesh, #searchMenu{
     width: 50vw;
     height: 60vh;
     background-color: var(--primaryBackgroundColor);
@@ -104,4 +104,14 @@ body{
 
 #customMesh:hover{
     cursor: crosshair;
+}
+
+#searchMenu{
+    width: 400px;
+    height: 300px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /* HIDDEN BY DEFAULT: */
+    /*display: block;*/
+    display: none;  
 }

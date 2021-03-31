@@ -143,8 +143,17 @@
             <p id="customMeshText">
                 <span id="customMeshApply">&#8677;</span>
                 Click to add points...
-                <span class="closeBtn" style="padding: 8px; padding-top: 0px;" onclick="custom_mesh_HTML_reset(); customMesh.style.display = 'none'">&#x2715</span>
+                <span id="customMeshCloseBtn" class="closeBtn" style="padding: 8px; padding-top: 0px;">&#x2715</span>
             </p>
+        </div>
+
+        <div id="searchMenu">
+            <p class="closeBtn" id="searchMenuCloseBtn">&#x2715</p>
+            <p style="margin-top: 0px;">Search for a command:</p>
+            <input id="searchMenuSearchBar" placeholder="Search..." type="text">
+            <div id="searchMenuResults">
+                
+            </div>
         </div>
 
         <div id="btns">
@@ -170,6 +179,7 @@
         <script type="text/javascript" src="./Js/Scene/AvailableObjects.js"></script>
         <script type="text/javascript" src="./Js/Scene/ObjectCreator.js"></script>
         <script type="text/javascript" src="./Js/KeyboardShortcuts.js"></script>
+        <script type="text/javascript" src="./Js/AvailableCommands.js"></script>
         <script type="text/javascript" src="./Js/Main.js"></script>
     </body>
 </html>

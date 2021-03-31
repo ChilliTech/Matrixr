@@ -89,4 +89,10 @@ function render_image(){
     document.body.removeChild(dlLink);
 }
 
+function open_search_menu(){
+    searchMenu.style.display = "block";
+    searchMenuSearchBar.focus();
+}
+
 document.getElementById("helpWindowCloseBtn").addEventListener("click", function(){ helpWindow.style.display = "none" });
+document.getElementById("searchMenuCloseBtn").addEventListener("click", function(){ searchMenu.style.display = "none" });

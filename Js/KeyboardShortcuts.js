@@ -138,4 +138,8 @@ document.body.addEventListener("keyup", function(e){
     else if (e.key == "e"){
         render_image();
     }
+
+    else if (e.key == "a"){
+        open_search_menu();
+    }
 });
