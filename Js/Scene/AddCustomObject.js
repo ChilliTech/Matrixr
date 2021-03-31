@@ -10,11 +10,15 @@ function custom_mesh_HTML_reset(){
 
 function add_custom_object(){
     let points = [];
-    let cubeVertices = [];
-    let lineEdges = [];
+    custom_mesh_HTML_reset();
 
+    function remove_event_listeners(){
+        customMesh.removeEventListener("click", add_point);
+        customMeshApply.removeEventListener("click", apply_points);
+    }
+    
     function apply_points(){
-        if (!"applyCustomMeshPrompt") return;
+        if (!confirm("Are you sure you want to continue?", "")) return;
         if (points.length < 3) return;
 
         points.push(points[0]);
@@ -42,10 +46,10 @@ function add_custom_object(){
         scene.add(mesh);
 
         // Remove all the points from customMesh
-        customMesh.style.display = "none";
-        customMesh.removeEventListener("click", add_point);
-        customMeshApply.removeEventListener("click", apply_points);
+        points = [];
         custom_mesh_HTML_reset();
+        remove_event_listeners();
+        customMesh.style.display = "none";
 
         select_object(mesh);
         update_scene_tree();
@@ -54,6 +58,8 @@ function add_custom_object(){
 
     function add_point(e){
         if (e.target.id == "customMeshApply") return;
+        if (e.target.id == "customMeshCloseBtn") return;
+        console.log(e.target.id)
 
         let div = add_element(customMesh, "div");
         div.style.position = "absolute";
@@ -62,11 +68,21 @@ function add_custom_object(){
         div.style.backgroundColor = "#4ba3f4";
         div.style.left = (e.clientX - customMesh.offsetLeft).toString() + "px";
         div.style.top = (e.clientY - customMesh.offsetTop).toString() + "px";
-        points.push(new THREE.Vector3((e.clientX / canvas.offsetWidth) * 2 - 1, 0, (e.clientY / canvas.offsetHeight) * 2 + 1));
+        points.push(new THREE.Vector3((e.clientX / canvas.offsetWidth) * 3 - 1, 0, (e.clientY / canvas.offsetHeight) * 3 + 1));
     }
-
+    
     customMesh.style.display = "block";
-    customMeshApply.removeEventListener("click", apply_points);
+
+    remove_event_listeners();
+
+    customMesh.addEventListener("click", add_point);
     customMeshApply.addEventListener("click", apply_points);
-    customMesh.addEventListener("click", function(e){ add_point(e) });
+
+    customMeshCloseBtn.addEventListener("click", function(){
+        remove_event_listeners();
+        console.log("Hello")
+        points = [];
+        custom_mesh_HTML_reset();
+        customMesh.style.display = "none";
+    });
 }
