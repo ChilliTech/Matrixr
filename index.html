@@ -141,7 +141,7 @@
 
         <div id="customMesh">
             <p id="customMeshText">
-                <span id="customMeshApply">&#8677;</span>
+                <span id="customMeshApply">&#8677</span>
                 Click to add points...
                 <span id="customMeshCloseBtn" class="closeBtn" style="padding: 8px; padding-top: 0px;">&#x2715</span>
             </p>
@@ -156,13 +156,16 @@
             </div>
         </div>
 
+        <div id="objectParameterMenu">
+            <!-- Everything here is added with code -->
+        </div>
+
         <div id="btns">
             <img src="Images/Camera.svg" onclick="render_image()" />
             <img src="Images/AddObject.svg" onclick="add_custom_object(); save_project()" />
             <img src="Images/ZoomIn.svg" onclick="camera.translateZ(-2)"/>
             <img src="Images/ZoomOut.svg" onclick="camera.translateZ(2)" />
         </div>
-
 
         <script type="text/javascript" src="./Lib/three.js"></script>
         <script type="text/javascript" src="./Lib/OrbitControls.js"></script>

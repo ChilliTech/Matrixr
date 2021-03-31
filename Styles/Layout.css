@@ -62,7 +62,7 @@ body{
     cursor: pointer;
 }
 
-#helpWindow, #customMesh, #searchMenu{
+#helpWindow, #customMesh, #searchMenu, #objectParameterMenu{
     width: 50vw;
     height: 60vh;
     background-color: var(--primaryBackgroundColor);
@@ -114,4 +114,14 @@ body{
     /* HIDDEN BY DEFAULT: */
     /*display: block;*/
     display: none;  
+}
+
+#objectParameterMenu{
+    width: auto;
+    height: auto;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /* HIDDEN BY DEFAULT: */
+    /*display: block;*/
+    display: none;
 }

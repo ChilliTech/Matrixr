@@ -59,7 +59,6 @@ function add_custom_object(){
     function add_point(e){
         if (e.target.id == "customMeshApply") return;
         if (e.target.id == "customMeshCloseBtn") return;
-        console.log(e.target.id)
 
         let div = add_element(customMesh, "div");
         div.style.position = "absolute";

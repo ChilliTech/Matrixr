@@ -104,6 +104,7 @@ orientation-gizmo{
 
 .closeBtn{
     float: right;
+    margin-top: 0px;
 }
 
 .closeBtn:hover{
@@ -135,4 +136,13 @@ orientation-gizmo{
 #searchMenuCloseBtn{
     margin-top: 0px;
     float: right;
+}
+
+#objectParameterMenu label{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.hover:hover{
+    cursor: pointer;
 }

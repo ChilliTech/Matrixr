@@ -4,6 +4,7 @@
 
 let availableObjects = {
     "Custom Mesh": {
+        "parameters": {},
         "metadata": ["custom", "mesh", "shape", "model"],
         "add": function(){
             add_custom_object();
@@ -11,9 +12,14 @@ let availableObjects = {
     },
 
     "Cube Mesh": {
+        "parameters": {
+            "widthSegments": 1,
+            "heightSegments": 1,
+            "depthSegments": 1
+        },
         "metadata": ["cube", "mesh", "square", "box", "shape"],
         "add": function(){
-            let geometry = new THREE.CubeGeometry();
+            let geometry = new THREE.CubeGeometry(1, 1, 1, this.parameters.widthSegments, this.parameters.heightSegments, this.parameters.depthSegments);
             let material = new THREE.MeshPhysicalMaterial({color: 0xffffff, vertexColors: THREE.FaceColors});
             material.color.convertSRGBToLinear();
             material.flatShading = true;
@@ -26,6 +32,13 @@ let availableObjects = {
     },
 
     "Cone Mesh": {
+        "parameters": {
+            "radius": 1,
+            "radialSegments": 8,
+            "heightSegments": 1,
+            "thetaStart": 0,
+            "thetaLength": 2 * Math.PI
+        },
         "metadata": ["cone", "mesh", "pyramid", "shape"],
         "add": function(){
             let geometry = new THREE.ConeGeometry();
