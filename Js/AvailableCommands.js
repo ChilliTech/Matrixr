@@ -3,32 +3,32 @@
 // ***************
 
 let availableCommands = {
-    "add_custom_object": {
+    "Add Custom Object": {
         "metadata": ["add", "custom", "mesh", "object", "unique", "new", "different"],
         "apply": function(){ add_custom_object() }
     },
 
-    "delete_selected_object": {
+    "Delete Selected Object": {
         "metadata": ["delete", "remove", "selection", "selected", "object"],
         "apply": function(){ delete_object(selectedObject) }
     },
 
-    "duplicate_selected_object": {
+    "Duplicate Selected Object": {
         "metadata": ["duplicate", "copy", "selection", "selected", "object"],
         "apply": function(){ duplicate_object(selectedObject) }
     },
 
-    "render": {
+    "Render": {
         "metadata": ["render", "export"],
         "apply": function(){ render_image() }
     },
 
-    "zoom_in": {
+    "Zoom In": {
         "metadata": ["zoom", "in", "increase", "scroll"],
         "apply": function(){ camera.translateZ(-2) }
     },
 
-    "zoom_out": {
+    "Zoom Out": {
         "metadata": ["zoom", "out", "decrease", "scroll"],
         "apply": function(){ camera.translateZ(2) }
     }
