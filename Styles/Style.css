@@ -9,7 +9,7 @@
     color: var(--textColor);
 }
 
-#sceneTree p:hover, #objectCreator p:hover{
+#sceneTree p:hover, #objectCreator p:hover, #searchMenu p:hover{
     cursor: pointer;
 }
 

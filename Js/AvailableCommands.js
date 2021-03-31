@@ -8,9 +8,29 @@ let availableCommands = {
         "apply": function(){ add_custom_object() }
     },
 
+    "delete_selected_object": {
+        "metadata": ["delete", "remove", "selection", "selected", "object"],
+        "apply": function(){ delete_object(selectedObject) }
+    },
+
+    "duplicate_selected_object": {
+        "metadata": ["duplicate", "copy", "selection", "selected", "object"],
+        "apply": function(){ duplicate_object(selectedObject) }
+    },
+
     "render": {
         "metadata": ["render", "export"],
         "apply": function(){ render_image() }
+    },
+
+    "zoom_in": {
+        "metadata": ["zoom", "in", "increase", "scroll"],
+        "apply": function(){ camera.translateZ(-2) }
+    },
+
+    "zoom_out": {
+        "metadata": ["zoom", "out", "decrease", "scroll"],
+        "apply": function(){ camera.translateZ(2) }
     }
 }
 
@@ -23,7 +43,8 @@ for (let key in availableCommands){
         element.style.textDecoration = "underline";
         element.innerHTML = key;
         element.addEventListener("click", function(){ 
-            availableCommands[key].add()
+            availableCommands[key].apply();
+            searchMenu.style.display = "none";
 
             update_scene_tree();
             update_property_editor();
@@ -48,7 +69,8 @@ searchMenuSearchBar.addEventListener("change", function(){
                 element.style.textDecoration = "underline";
                 element.innerHTML = key;
                 element.addEventListener("click", function(){
-                    availableCommands[key].apply()
+                    availableCommands[key].apply();
+                    searchMenu.style.display = "none";
 
                     update_scene_tree();
                     update_property_editor();
