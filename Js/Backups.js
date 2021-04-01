@@ -1,28 +1,33 @@
+// ***************
+// This file allows the saving of the scene.
+// ***************
+
 // This procedure resets everything that the user had saved - in localStorage.
-function reset_project(){
-    if (confirm(resetProjectPrompt)){
-        localStorage.clear();
-        window.location.reload();
-    }
+function new_project(){
+    if (!confirm(resetProjectPrompt)) return;
+
+    localStorage.clear();
+    window.location.reload();
 }
 
 // This procedure saves the scene to localstorage
 function save_project(){
     scene.remove(selectedObjectBBox);
-    let sceneStr = JSON.stringify(scene);
-    localStorage.setItem("scene", sceneStr);
-    scene.add(selectedObjectBBox)
-
-    display_message("Successfully saved the scene.");
+    localStorage.setItem("scene", JSON.stringify(scene));
+    scene.add(selectedObjectBBox);
+    display_message("Your project has been saved.");
 }
 
 // This procedure restores the scene from a localStorage backup
 function restore_from_save(){
     let sceneStr = localStorage.getItem("scene");
+
+    if (sceneStr == null) return;
+
     let sceneStrJSON = JSON.parse(sceneStr);
     scene = new THREE.ObjectLoader().parse(sceneStrJSON);
 
-    selectedObject = scene;
+    select_object(scene);
 }
 
 // This procedure creates a TXT backup file with a custom name of everything the user has in "scene".
@@ -61,12 +66,12 @@ function backup_project(){
     }
 
     scene.add(selectedObjectBBox);
-    display_message("Successfully backed up the scene.");
 }
 
 // This procedure restores the scene from a previously created TXT backup file
 function restore_from_backup(){
     let upload = document.createElement("INPUT");
+    upload.style.display = "none";
     upload.setAttribute("type", "file");
     document.body.appendChild(upload);
 
@@ -83,9 +88,9 @@ function restore_from_backup(){
             scene = new THREE.ObjectLoader().parse(sceneStrJSON);
 
             // Select the root object in the THREE.js scene.
-            selectedObject = scene;
-
-            display_message("Successfully restored from the backup.");
+            save_project();
+            select_object(scene);
+            upload.parentElement.removeChild(upload);
         }
 
         if (file){
@@ -97,3 +102,8 @@ function restore_from_backup(){
 // When the file is refreshed or opened, this file (along with all the other source files) will be run.
 // So, when you refresh or open the page, it'll run this function.
 restore_from_save();
+
+// Save the project when the page is left
+window.onbeforeunload = function(){
+    //save_project();
+}

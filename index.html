@@ -2,63 +2,187 @@
 <html>
     <head>
         <title>Matrixr</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="./Styles/Layout.css" />
+        <link rel="stylesheet" href="./Styles/Style.css" />
+        <link rel="stylesheet" href="./Styles/MainHeaderDropdown.css" />
         <link rel="shortcut icon" href="./Images/Favicon.svg" />
     </head>
     <body>
-        <header id="header">
-            <a class="aBtns" href="#" onclick="save_project();">SAVE</a>
-            <a class="aBtns" href="#" onclick="reset_project();">Reset</a>
-            <a class="aBtns" href="#" onclick="backup_project();">Backup</a>
-            <a class="aBtns" href="#" onclick="restore_from_backup();">Restore</a>
+        <header id="mainHeader">
+            <div class="subNav">
+                <a href="#" class="subNavBtn">File &#9660;</a>
+                <div class="subNavContent">
+                    <a href="#" onclick="save_project()">Save</a>
+                    <a href="#" onclick="backup_project()">Backup</a>
+                    <a href="#" onclick="restore_from_backup()">Restore</a>
+                </div>
+            </div>
+            <div class="subNav">
+                <a href="#" class="subNavBtn">Edit &#9660;</a>
+                <div class="subNavContent">
+                    <a href="#" onclick="switch_ui_mode()">Switch Mode</a>
+                </div>
+            </div>
+            <a href="#" onclick="helpWindow.style.display = 'block'">Help</a>
+            <a href="#" onclick="new_project()">New Project</a>
         </header>
 
-        <section id="contextEditor">
-            <section id="sceneTree">
-                <!-- Everything below is added with code -->
-            </section>
-    
-            <section id="propertyEditor">
-                <!-- Everything in here is added with code -->
-            </section>
-    
-            <section id="objectCreator">
-                <p>Search for an object:</p>
-                <input id="objectSearchBar" placeholder="Search..." onfocus="focusing = true" onfocusout="focusing = false" type="text">
-                <div id="objectCreatorResults">
-                    <!-- Everything in here is added with code -->
-                </div>
-            </section>
-    
-            <section id="keyboardShortcuts">
-                <section id="transformMode">
-                    <img id="ScaleIcon" title="e" src="./Images/ScaleIcon.svg" onclick="set_transform_mode('scale')">
-                    <img id="RotationIcon"title="r"  src="./Images/RotationIcon.svg" onclick="set_transform_mode('rotation')">
-                    <img id="PositionIcon"title="t"  src="./Images/PositionIconSelected.svg" onclick="set_transform_mode('position')">
-                </section>
-    
-                <button id="transformZ" class="btns">Z</button>
-                <p style="grid-column: 2/3; grid-row: 2/3; line-height: 24px;">Keyboard <br> Shortcuts</p>
-                <button id="transformShiftZ" class="btns">Shift + Z</button>
-                <button id="transformShiftX" class="btns">Shift + X</button>
-                <button id="transformShiftY" class="btns">Shift + Y</button>
-                <button id="transformY" class="btns">Y</button>
-                <button id="transformX" class="btns">X</button>
-            </section>
+        <section id="sceneTree">
+            <a id="deleteObjectBtn" class="aBtns" href="#" onclick="delete_object()">-</a>
+            <div id="sceneTreeItems">
+
+            </div>
         </section>
+
+        <div id="objectCreator">
+            <p>Search for an object:</p>
+            <input id="objectSearchBar" placeholder="Search..." type="text">
+            <div id="objectCreatorResults">
+                
+            </div>
+        </div>
         
+        <section id="propertyEditor">
+            
+        </section>
+
         <canvas id="mainCanvas">Sorry, your browser doesn't support the <code>canvas</code> element.</canvas>
+
+        <div id="helpWindow">
+            <p class="closeBtn" id="helpWindowCloseBtn">&#x2715</p>
+            <h1>Tutorial - Matrixr</h1>
+            <p>
+                Welcome to Matrixr! This project is available on Github at: <a href="https://github.com/ChilliTech/Matrixr">https://github.com/ChilliTech/Matrixr</a>. The aim of this project is to provide an easy way for anyone to create some basic 3d designs from their browser - even if your computer is about as powerful as a potato!
+            </p>
+            <h3>How To Use:</h3>
+            <table>
+                <tr>
+                    <th>How To</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>?</td>
+                    <td>Open & Close This Window</td>
+                </tr>
+                <tr>
+                    <td>CTRL-S, Autosave</td>
+                    <td>Save</td>
+                </tr>
+                <tr>
+                    <td>f</td>
+                    <td>Switch UI Mode (Dark or Light)</td>
+                </tr>
+                <tr>
+                    <td>Click & Drag</td>
+                    <td>Orbit The View</td>
+                </tr>
+                <tr>
+                    <td>Right Click & Drag</td>
+                    <td>Pan The View</td>
+                </tr>
+                <tr>
+                    <td>Middle Click & Drag, Scroll</td>
+                    <td>Scroll The View</td>
+                </tr>
+                <tr>
+                    <td>s & Mouse Movement</td>
+                    <td>Scale The Selected Object</td>
+                </tr>
+                <tr>
+                    <td>r & Mouse Movement</td>
+                    <td>Rotate The Selected Object</td>
+                </tr>
+                <tr>
+                    <td>p & Mouse Movement</td>
+                    <td>Positions The Selected Object</td>
+                </tr>
+                <tr>
+                    <td>x, y, z</td>
+                    <td>Lock To Specific Axis When Transforming (Positioning, Rotating, Scaling)</td>
+                </tr>
+                <tr>
+                    <td>Right Click</td>
+                    <td>Cancel An Object Transformation (Position, Rotation, Scale)</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td>Duplicate The Selected Object</td>
+                </tr>
+                <tr>
+                    <td>Backspace</td>
+                    <td>Delete The Selected Object</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td>Render (Export) The Current Scene</td>
+                </tr>
+            </table>
+            <br>
+            <h3>Libraries Used:</h3>
+            <ul>
+                <li><a href="./Lib/three.js">three.js</a> - Copyright © 2010-2021 three.js authors (MIT License)*</li>
+                <li><a href="./Lib/OrbitControls.js">OrbitControls.js</a> - Copyright © 2010-2021 three.js authors (MIT License)*</li>
+                <li><a href="./Lib/OBJExporter.js">OBJExporter.js</a> - Copyright © 2010-2021 three.js authors (MIT License)*</li>
+                <li><a href="./Lib/OrientationGizmo.js">OrientationGizmo.js</a> - Copyright (c) 2020 jrj2211 (MIT License)*</li>
+            </ul>
+            <p>
+                * MIT License
+            </p>
+            <p>
+                Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+            </p>
+            <p>
+                The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+            </p>
+            <p>
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+            </p>
+        </div>
+
+        <div id="customMesh">
+            <p id="customMeshText">
+                <span id="customMeshApply">&#8677</span>
+                Click to add points...
+                <span id="customMeshCloseBtn" class="closeBtn" style="padding: 8px; padding-top: 0px;">&#x2715</span>
+            </p>
+        </div>
+
+        <div id="searchMenu">
+            <p class="closeBtn" id="searchMenuCloseBtn">&#x2715</p>
+            <p style="margin-top: 0px;">Search for a command:</p>
+            <input id="searchMenuSearchBar" placeholder="Search..." type="text">
+            <div id="searchMenuResults">
+                
+            </div>
+        </div>
+
+        <div id="objectParameterMenu">
+            <!-- Everything here is added with code -->
+        </div>
+
+        <div id="btns">
+            <img src="Images/Camera.svg" onclick="render_image()" />
+            <img src="Images/AddObject.svg" onclick="add_custom_object(); save_project()" />
+            <img src="Images/ZoomIn.svg" onclick="camera.translateZ(-2)"/>
+            <img src="Images/ZoomOut.svg" onclick="camera.translateZ(2)" />
+        </div>
 
         <script type="text/javascript" src="./Lib/three.js"></script>
         <script type="text/javascript" src="./Lib/OrbitControls.js"></script>
         <script type="text/javascript" src="./Lib/OBJExporter.js"></script>
+        <script type="text/javascript" src="./Lib/OrientationGizmo.js"></script>
 
-        <script type="text/javascript" src="./Js/SceneSetup.js"></script>
-        <script type="text/javascript" src="./Js/SetupFunctions.js"></script>
+        <script type="text/javascript" src="./Js/Scene/SceneSetup.js"></script>
+        <script type="text/javascript" src="./Js/Scene/ObjectFunctions.js"></script>
+        <script type="text/javascript" src="./Js/CoreFunctions.js"></script>
         <script type="text/javascript" src="./Js/Backups.js"></script>
-        <script type="text/javascript" src="./Js/AvailableObjects.js"></script>
-        <script type="text/javascript" src="./Js/ContextEditor.js"></script>
-        <script type="text/javascript" src="./Js/KeyboardCombos.js"></script>
+        <script type="text/javascript" src="./Js/Scene/SceneTree.js"></script>
+        <script type="text/javascript" src="./Js/Scene/PropertyEditor.js"></script>
+        <script type="text/javascript" src="./Js/Scene/AddCustomObject.js"></script>
+        <script type="text/javascript" src="./Js/Scene/AvailableObjects.js"></script>
+        <script type="text/javascript" src="./Js/Scene/ObjectCreator.js"></script>
+        <script type="text/javascript" src="./Js/KeyboardShortcuts.js"></script>
+        <script type="text/javascript" src="./Js/AvailableCommands.js"></script>
         <script type="text/javascript" src="./Js/Main.js"></script>
     </body>
 </html>
