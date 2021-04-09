@@ -104,17 +104,8 @@ document.body.addEventListener("keyup", function(e){
         reset_object_position(selectedObject);
 
         // If you press the same axis twice, change the axis to the default value
-        if (e.key == transformingAxis) transformingAxis = "xz";
+        if (e.key == transformingAxis) transformingAxis = "z";
         else transformingAxis = e.key;
-    }
-
-    else if ((e.key == "X") || (e.key == "Y") || (e.key == "Z")){
-        if (transforming == false) return;
-        
-        reset_object_position(selectedObject);
-        if (e.key == "X") transformingAxis = "yz";
-        if (e.key == "Y") transformingAxis = "xz";
-        if (e.key == "Z") transformingAxis = "xy";
     }
 
     else if (e.key == "Escape"){
