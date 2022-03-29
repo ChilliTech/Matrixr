@@ -1,6 +1,6 @@
 ![](./Images/MatrixrScreenshot.png)
 
-# Environment Composer:
+# Matrixr:
 Almost a year ago (on the 6th of April), I began a project - similar to this, called "Mesh Composer". I have since come to terms with the fact that... well... the code isn't that good. Anyway, I decided to redo Mesh Composer - which is this project - which was started somewhere around the 4th of March (I think).
 
 # Usage
